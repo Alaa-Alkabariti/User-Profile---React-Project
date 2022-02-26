@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Utilization from "../src/Components/Utilization/en.json";
+import Navbar from "./Screens/Home/Navbar";
+import Hero from "./Screens/Home/Hero";
+import HeaderSection from "../src/Screens/Home/HeadSection";
+import CreateBeautifulDesig from "../../profile/src/Screens/Home/CreateBeautifulDesig";
+import Benefits from "../src/Screens/Home/Benefits";
+import Engaging from "../src/Screens/Home/Engaging";
+import CreateProfile from "../src/Screens/Home/CreateProfile";
+import Footer from "./Screens/Home/Footer";
+import Registration from "./Screens/Registration";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Hero />
+      <CreateBeautifulDesig />
+      <Benefits />
+      <Engaging />
+      <CreateProfile />
+      <Footer />
+      {/* <Registration /> */}
+    </>
   );
 }
 
