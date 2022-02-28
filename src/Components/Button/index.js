@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Utilization from "../../../src/Components/Utilization/ar.json";
+import Names from "../../../src/Components/Names/en.json";
 
 const Buttons = styled.button`
   background-color: #46079a;
   color: white;
   height: 46px;
-  width: ${props => props.width};
- 
+  width: ${(props) => props.width}px;
 
   border-radius: 4px;
   border: 0.1px solid #aaaaaa;
@@ -18,10 +17,10 @@ const Buttons = styled.button`
   }
 `;
 
-const Button = ({children}) => {
+const Button = ({ children, width }) => {
   return (
     <>
-      <Buttons>{children}</Buttons>
+      <Buttons width={width}>{children}</Buttons>
     </>
   );
 };

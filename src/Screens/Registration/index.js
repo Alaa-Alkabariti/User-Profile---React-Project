@@ -2,7 +2,7 @@ import React from "react";
 import profily from "../../Images/Profily.png";
 import styled from "styled-components";
 import Button from "../../Components/Button";
-import Utilization from "../../Components/Utilization/en.json";
+import Names from "../../Components/Names/en.json";
 import { useState } from "react";
 
 const media = {
@@ -42,7 +42,7 @@ const Tabs = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${media.mobile} {
+  /*  ${media.mobile} {
     background-color: red;
   };
   ${media.ipad} {
@@ -50,8 +50,7 @@ const Tabs = styled.div`
   };
   ${media.desktop} {
     background-color: gray;
-  }
-  
+  } */
 `;
 
 const Left = styled.div`
@@ -63,7 +62,11 @@ const Left = styled.div`
   cursor: pointer;
   font-weight: bold;
   padding-bottom: 10px;
-  box-shadow: 2px 2px 2px #eeeeee;
+  box-shadow: 0.3px 0.3px 0.3px #eeeeee;
+
+  &:hover {
+    background-color: #eeeeee;
+  }
 `;
 
 const Right = styled.div`
@@ -73,6 +76,10 @@ const Right = styled.div`
   padding-bottom: 10px;
   text-align: center;
   cursor: pointer;
+
+  &:hover {
+    background-color: #eeeeee;
+  }
 `;
 
 const Image = styled.img`
@@ -102,7 +109,7 @@ function Registration() {
 
   function handleClick(e) {
     setReg("False");
-    const Left = styled.div`
+    /*  const Left = styled.div`
       width: 50%;
       border-bottom: 2px;
       color: black;
@@ -112,12 +119,12 @@ function Registration() {
       font-weight: bold;
       padding-bottom: 10px;
       box-shadow: 2px 2px 2px #eeeeee;
-    `;
+    `; */
   }
 
   function handleClick2() {
     setReg("True");
-    const Left = styled.div`
+    /* const Left = styled.div`
       width: 50%;
       border-bottom: 2px;
       color: black;
@@ -127,7 +134,7 @@ function Registration() {
       font-weight: bold;
       padding-bottom: 10px;
       box-shadow: 2px 2px 2px #eeeeee;
-    `;
+    `; */
   }
 
   return (
@@ -145,13 +152,13 @@ function Registration() {
               <Input type="email" placeholder="Email Address" />
               <Input type="password" placeholder="Password" />
               <Input type="password" placeholder="Confirm Password" />
-              <Button>{Utilization["Sign Up"]}</Button>
+              <Button>{Names["Sign Up"]}</Button>
             </Form>
           ) : (
             <Form>
               <Input type="text" placeholder="Username" />
               <Input type="email" placeholder="Email Address" />
-              <Button>{Utilization["Log In"]}</Button>
+              <Button>{Names["Log In"]}</Button>
             </Form>
           )}
         </Box>

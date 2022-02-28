@@ -1,28 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import Utilization from "../../../Components/Utilization/en.json";
+import Utilization from "../../../Components/Names/en.json";
 import Button from "../../../Components/Button";
-
-const Headi = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;`;
-
-const Title = styled.div`
-  color: #515151;
-  font-weight: bold;
-  text-align: center;
-  font-size: 24px;
-`;
-
-const Description = styled.div`
-  color: #9a9a9a;
-  max-width: 600px;
-  text-align: center;
-  margin-top: 10px;
-`;
+import { Headi, Title, Description } from "./index.style";
 
 function HeaderSection(props) {
   return (

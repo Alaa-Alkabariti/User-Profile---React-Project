@@ -1,39 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Utilization from "../../../Components/Utilization/en.json";
+import Names from "../../../Components/Names/en.json";
 import Button from "../../../Components/Button";
 import profily from "../../../Images/Profily.png";
-
-const NavTag = styled.div`
-  width: 80%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  position: absolute;
-  top: 50px;
-`;
-
-const TwoButtons = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-`;
-
-const Link = styled.a`
-  color: #515151;
-  font-weight: bold;
-  padding-right: 15px;
-  cursor: pointer;
-
-  &:hover {
-    color: gray;
-  }
-`;
+import {Link , TwoButtons , NavTag } from './index.style';
 
 function Navbar(props) {
   return (
@@ -41,8 +11,8 @@ function Navbar(props) {
       <NavTag>
         <img src={profily} alt="logo" />
         <TwoButtons>
-          <Link>{Utilization["Try It"]}</Link>
-          <Button width="300px">{Utilization["Log In"]}</Button>
+          <Link>{Names["Try It"]}</Link>
+          <Button width="100">{Names["Log In"]}</Button>
         </TwoButtons>
       </NavTag>
     </>
