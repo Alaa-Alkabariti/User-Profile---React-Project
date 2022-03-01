@@ -57,7 +57,7 @@ const Left = styled.div`
   width: 50%;
   border-bottom: 2px;
   color: black;
-  border-bottom: 3px solid #46079a;
+  border-bottom: ${props => props.borderBottom};
   text-align: center;
   cursor: pointer;
   font-weight: bold;
@@ -72,7 +72,7 @@ const Left = styled.div`
 const Right = styled.div`
   color: black;
   width: 50%;
-  border-bottom: 0.2px solid #eeeeee;
+  border-bottom: ${props => props.borderBottom};
   padding-bottom: 10px;
   text-align: center;
   cursor: pointer;
@@ -105,61 +105,44 @@ const Input = styled.input`
 `;
 
 function Registration() {
-  const [Reg, setReg] = useState("False");
+ /*  const [Reg, setReg] = useState("False"); */
+ const [toggleState, setToggleState] = useState(false);
 
-  function handleClick(e) {
-    setReg("False");
-    /*  const Left = styled.div`
-      width: 50%;
-      border-bottom: 2px;
-      color: black;
-      border-bottom: 3px solid #46079a;
-      text-align: center;
-      cursor: pointer;
-      font-weight: bold;
-      padding-bottom: 10px;
-      box-shadow: 2px 2px 2px #eeeeee;
-    `; */
-  }
-
-  function handleClick2() {
-    setReg("True");
-    /* const Left = styled.div`
-      width: 50%;
-      border-bottom: 2px;
-      color: black;
-      border-bottom: 3px solid #46079a;
-      text-align: center;
-      cursor: pointer;
-      font-weight: bold;
-      padding-bottom: 10px;
-      box-shadow: 2px 2px 2px #eeeeee;
-    `; */
-  }
+ const toggleTab = (value) => {
+  setToggleState(value);
+}
 
   return (
     <>
       <Register>
+        
         <Box>
           <Image src={profily} />
-          <Tabs>
-            <Left onClick={handleClick}>Signup</Left>
-            <Right onClick={handleClick2}>Login</Right>
-          </Tabs>
-          {Reg === "False" ? (
+         
+          {toggleState === false ? (
+            <>
+             <Tabs>
+             <Left borderBottom='3px solid #46079a' onClick={() => toggleTab(false)}>Signup</Left>
+             <Right borderBottom='.5px solid #eeeeee' onClick={() => toggleTab(true)}>Login</Right>
+           </Tabs>
             <Form>
               <Input type="text" placeholder="Username" />
               <Input type="email" placeholder="Email Address" />
               <Input type="password" placeholder="Password" />
               <Input type="password" placeholder="Confirm Password" />
-              <Button>{Names["Sign Up"]}</Button>
-            </Form>
+              <Button width='277'>{Names["Sign Up"]}</Button>
+            </Form></>
           ) : (
+           <>
+            <Tabs>
+            <Left borderBottom='.5px solid #eeeeee'  onClick={() => toggleTab(false)}>Signup</Left>
+            <Right borderBottom='3px solid #46079a' onClick={() => toggleTab(true)}>Login</Right>
+          </Tabs>
             <Form>
               <Input type="text" placeholder="Username" />
               <Input type="email" placeholder="Email Address" />
-              <Button>{Names["Log In"]}</Button>
-            </Form>
+              <Button width='277'>{Names["Log In"]}</Button>
+            </Form></>
           )}
         </Box>
       </Register>
