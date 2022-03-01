@@ -10,7 +10,6 @@ import CreateProfile from "../src/Screens/Home/CreateProfile";
 import Footer from "./Screens/Home/Footer";
 import Registration from "./Screens/Registration";
 import MainL from "./Screens/ViewProfile/MainLayout";
-import Test from "./Screens/Registration/test";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
       <CreateProfile />
       <Footer />  */}
       <Registration />
-      {/* <Test /> */}
     </>
   );
 }
