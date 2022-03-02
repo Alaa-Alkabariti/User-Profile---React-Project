@@ -10,6 +10,7 @@ import CreateProfile from "../src/Screens/Home/CreateProfile";
 import Footer from "./Screens/Home/Footer";
 import Registration from "./Screens/Registration";
 import MainL from "./Screens/ViewProfile/MainLayout";
+import MainLayout from "./Screens/ViewProfile/MainLayout";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
       <Benefits />
       <Engaging />
       <CreateProfile />
-      <Footer />  */}
-      <Registration />
+      <Footer /> */}
+      {/* <Registration /> */}
+      <MainLayout />
     </>
   );
 }

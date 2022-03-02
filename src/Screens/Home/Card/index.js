@@ -1,5 +1,5 @@
 import React from "react";
-import Utilization from "../../../Components/Names/en.json";
+import Names from "../../../Components/Names/en.json";
 import { CardItem, Imag, Title, Description } from "./index.style";
 
 function Card(props) {

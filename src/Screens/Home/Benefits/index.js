@@ -10,25 +10,23 @@ import { BenefitsSection, Cards } from "./index.style";
 import { Imag } from "../Card/index.style";
 
 function Benefits(props) {
-  const [cardd, setCard] = useState(
-    [
+  const [cardd, setCard] = useState([
     {
-      image: { card1 },
+      image: card1,
       title: Names["CardTitle"],
       desc: Names["Desc"],
     },
     {
-      image: { card2 },
+      image: card2,
       title: Names["CardTitle"],
       desc: Names["Desc"],
     },
     {
-      image: { card3 },
+      image: card3,
       title: Names["CardTitle"],
       desc: Names["Desc"],
     },
-  ]
-  );
+  ]);
 
   return (
     <BenefitsSection>
@@ -36,13 +34,11 @@ function Benefits(props) {
         title={Names["Benefits of using Profily"]}
         desc={Names["header.desc"]}
       />
+      <Cards>
       {cardd.map((el) => (
-        <Card
-          image={el.image}
-          title={el.title}
-          desc={el.desc}
-        ></Card>
+        <Card key={el.image} image={el.image} title={el.title} desc={el.desc} ></Card>
       ))}
+      </Cards>
     </BenefitsSection>
   );
 }

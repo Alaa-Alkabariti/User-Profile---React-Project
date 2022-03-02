@@ -13,8 +13,8 @@ export const CardItem = styled.div`
   margin: 10px;
   box-sizing: border-box;
   background-color: white;
-  min-width: 300px;
   padding-top: 30px;
+  min-width: 300px;
   box-shadow: 5px 5px 5px #eeeeee;
   &:hover {
     cursor: pointer;

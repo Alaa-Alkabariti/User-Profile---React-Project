@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const LeftSection = styled.div`
   width: 35%;
   height: 100vh;
-  border: none;
+  border: 2px solid red;
   padding: 0px;
   margin: 0px;
 `;
 
-export const Image = styled.img.attrs((props) => ({// I created src attr as a props,, is it good?
-  src: props.Src,
-  alt: props.Alt
+export const Image = styled.img.attrs((props) => ({// I created src attr as a props,, is it good? .....
+  src: props.IMG,
+  
 }))`
   width: 100%;
   height: 100%;
@@ -31,15 +31,20 @@ export const Image = styled.img.attrs((props) => ({// I created src attr as a pr
 `;
 
 export const Nav = styled.div`
-width: 50%;
+width: 80%;
 height: 50px;
+margin: 0 auto;
 background-color:red
 `
 
 export const RightSection = styled.div`
-  width: 40%;
+  width: 65%;
   height: 20px;
   background-color:green;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
 ` ;
 
 export const Layout = styled.div`
@@ -47,6 +52,5 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  background-color:yellow;
+  align-items: flex-start; 
 `;

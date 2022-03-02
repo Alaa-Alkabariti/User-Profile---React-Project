@@ -3,25 +3,25 @@ import styled from "styled-components";
 import {
   LeftSection,
   Image,
-  Nav,
   RightSection,
   Layout,
 } from "../MainLayout/index.style.js";
 import personalPhoto from "../../../Images/personalPhoto.png";
 import About from "../About";
+import InternalNav from '../InternalNav/index'
 
 function MainLayout({ cildren, props }) {
   return (
     <>
       <Layout>
-        <RightSection>
-          <Nav>ff</Nav>
-          {cildren}
-        </RightSection>
         <LeftSection color="blue">
           {/* <Image src={card1} /> */}
-          <img src={personalPhoto} />
+          <Image IMG={personalPhoto} />
         </LeftSection>
+        <RightSection>
+          <InternalNav />
+          {cildren}
+        </RightSection>
       </Layout>
     </>
   );

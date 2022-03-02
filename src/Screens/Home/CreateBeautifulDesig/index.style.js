@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import Media from '../../../Media/index.style';
+import {media} from '../../../Media/index.style' 
 
 
-export const media = {
+
+/* export const media = {
     mobile : "minWidth : 320px",
     ipad : "maxWid : 760px"
-  }
+  }  */
   
   
   export const BeautiflDesig = styled.div`
@@ -42,9 +45,9 @@ export const media = {
     ${media.mobile} {
       width: 100%;
     }
-    ${media.ipad} {
+    ${media.mobile} {
       width: 100%;
-    } ;
+    } ; 
   `;
   
   export const RightImages = styled.div`
@@ -61,9 +64,10 @@ export const media = {
       margin-top: 200px;
       background-color: red;
     }
-    ${media.ipad} {
-      width: 100%;
-    } ;
+     ${media.mobile} {
+      width: 10%;
+      background-color: yellow;
+    } ; 
   `;
   
   export const Imag = styled.img`
@@ -73,6 +77,8 @@ export const media = {
     &:hover {
       border: 2px solid #46079a;
       cursor: pointer;
+      box-sizing: border-box;
     }
     
   `;
+
