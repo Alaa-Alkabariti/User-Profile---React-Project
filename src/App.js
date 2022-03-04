@@ -20,8 +20,10 @@ function App() {
       <Benefits />
       <Engaging />
       <CreateProfile />
-      <Footer /> */}
-      {/* <Registration /> */}
+      <Footer /> 
+      <Registration />  */}
+
+
       <MainLayout />
     </>
   );
