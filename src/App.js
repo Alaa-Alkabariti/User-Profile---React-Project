@@ -15,16 +15,16 @@ import MainLayout from "./Screens/ViewProfile/MainLayout";
 function App() {
   return (
     <>
-     {/*  <Hero />
+     {/* <Hero />
       <CreateBeautifulDesig />
       <Benefits />
       <Engaging />
       <CreateProfile />
       <Footer /> 
-      <Registration />  */}
+      <Registration />   */}
 
 
-      <MainLayout />
+      <MainLayout /> 
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Names from "../../../Components/Names/en.json";
 import Button from "../../../Components/Button";
 import header from "../../../Images/headerImage.png";
-import hero from "../../../Images/heroImage.png";
+// import hero from "../../../Images/heroImage.png";
 import Navbar from "../Navbar";
 import {
   HeroTitle,
@@ -33,9 +33,9 @@ function Hero(props) {
           </LeftSide>
           <RightSide>
            {/*  <Img src='Images/heroImage' alt="girl image" /> */}
-           <Img src={hero} alt="hero image"/>
+           <Img src='/Images/heroImage.png' alt="hero image"/>
           </RightSide>
-        </HeroContent>
+          </HeroContent>
       </Header>
     </>
   );
