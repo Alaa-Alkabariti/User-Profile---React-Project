@@ -2,7 +2,7 @@ import React from "react";
 import Names from "../../../Components/Names/en.json";
 import Button from "../../../Components/Button";
 import header from "../../../Images/headerImage.png";
-import hero from "../../../Images/heroImage.png";
+// import hero from "../../../Images/heroImage.png";
 import Navbar from "../Navbar";
 import {
   HeroTitle,

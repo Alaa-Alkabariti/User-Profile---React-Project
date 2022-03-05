@@ -2,7 +2,7 @@ import React from "react";
 import Utilization from "../../../Components/Names/en.json";
 import HeaderSection from "../HeadSection";
 import three from "../../../Images/3.png";
-import four from "../../../Images/4.png";
+// import four from "../../../Images/4.png";
 import one from "../../../Images/1.png";
 import two from "../../../Images/2.png";
 import {
@@ -29,7 +29,7 @@ function CreateBeautifulDesig() {
           </LeftImages>
           <RightImages>
             <Imag src={three} alt="third image" />
-            <Imag src={four} alt="fourth image" />
+            {/* <Imag src={four} alt="fourth image" /> */}
           </RightImages>
         </Images>
       </BeautiflDesig>

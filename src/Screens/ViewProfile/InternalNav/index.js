@@ -4,6 +4,7 @@ import { useState } from "react";
 import AboutDetails from "../AboutDetails/index";
 import Skills from "../Skills/index";
 import Services from "../Services";
+import Gallery from "../Gallery";
 
 function InternalNav() {
   let [clk, setHandleClicked] = useState("0");
@@ -64,6 +65,7 @@ function InternalNav() {
     );
   } else {
     clicked = (
+     <>
       <List>
         <ListItem onClick={() => setHandleClicked("0")}>About Me</ListItem>
         <ListItem onClick={() => setHandleClicked("1")}>Skills</ListItem>
@@ -76,6 +78,7 @@ function InternalNav() {
           Gallery
         </ListItem>
       </List>
+      <Gallery /></>
     );
   }
 
