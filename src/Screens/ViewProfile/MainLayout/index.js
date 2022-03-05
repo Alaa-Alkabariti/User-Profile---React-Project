@@ -12,38 +12,43 @@ import {
   Theme,
   Arrow,
   Icons,
-  Icon
+  Icon,
+  LeftSpace
 } from "../MainLayout/index.style.js";
 import personalPhoto from "../../../Images/personalPhoto.png";
 import About from "../About";
 import InternalNav from "../InternalNav/index";
 
-function MainLayout({ children }, props) {
+function MainLayout(props) {
+  // console.log('layout props', title);
   return (
     <>
       <Layout>
-        <LeftSection color="blue">
-          {/* <Image src={card1} /> */}
-          <Image IMG={personalPhoto} />
-          <OverLay></OverLay>
+        <LeftSpace>
 
-          <Title>{props.title}</Title>
-        </LeftSection>
+          <LeftSection color="blue">
+            {/* <Image src={card1} /> */}
+            <Image IMG={personalPhoto} />
+            <OverLay />
+
+            <Title>{props.title}</Title>
+          </LeftSection>
+        </LeftSpace>
 
         <RightSection>
           <InternalNav />
-          {children}
+          {props.children}
         </RightSection>
-        
-          <Icons>
+
+        <Icons>
           <Arrow>
             <Icon>&#8249;</Icon>
             <Icon>&#8250;</Icon>
           </Arrow>
           <Theme>
-          <VscColorMode />
-        </Theme>
-          </Icons>
+            <VscColorMode />
+          </Theme>
+        </Icons>
       </Layout>
     </>
   );

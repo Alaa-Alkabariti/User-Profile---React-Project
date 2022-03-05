@@ -29,36 +29,38 @@ function InternalNav() {
   } else if (clk === "1") {
     clicked = (
       <>
-      <List>
-        <ListItem onClick={() => setHandleClicked("0")}>About Me</ListItem>
-        <ListItem
-          borderBottom="3px solid #46079A"
-          fontWeight="bold"
-          onClick={() => setHandleClicked("1")}
-        >
-          Skills
-        </ListItem>
-        <ListItem onClick={() => setHandleClicked("2")}>Services</ListItem>
-        <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem>
-      </List>
-      <Skills /></>
+        <List>
+          <ListItem onClick={() => setHandleClicked("0")}>About Me</ListItem>
+          <ListItem
+            borderBottom="3px solid #46079A"
+            fontWeight="bold"
+            onClick={() => setHandleClicked("1")}
+          >
+            Skills
+          </ListItem>
+          <ListItem onClick={() => setHandleClicked("2")}>Services</ListItem>
+          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem>
+        </List>
+        <Skills />
+      </>
     );
   } else if (clk === "2") {
     clicked = (
-     <>
-      <List>
-        <ListItem onClick={() => setHandleClicked("0")}>About Me</ListItem>
-        <ListItem onClick={() => setHandleClicked("1")}>Skills</ListItem>
-        <ListItem
-          borderBottom="3px solid #46079A"
-          fontWeight="bold"
-          onClick={() => setHandleClicked("2")}
-        >
-          Services
-        </ListItem>
-        <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem>
-      </List>
-    <Services /></>
+      <>
+        <List>
+          <ListItem onClick={() => setHandleClicked("0")}>About Me</ListItem>
+          <ListItem onClick={() => setHandleClicked("1")}>Skills</ListItem>
+          <ListItem
+            borderBottom="3px solid #46079A"
+            fontWeight="bold"
+            onClick={() => setHandleClicked("2")}
+          >
+            Services
+          </ListItem>
+          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem>
+        </List>
+        <Services />
+      </>
     );
   } else {
     clicked = (

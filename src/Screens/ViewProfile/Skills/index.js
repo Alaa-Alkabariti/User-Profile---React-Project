@@ -1,6 +1,6 @@
-import { SkillNo, Title, Desc } from "../SkillItem/index.style";
+// import { SkillNo, Title, Desc } from "../SkillItem/index.style";
 import { useState } from "react";
-import { SkillsList } from "../Skills/index.style";
+import { SkillsList, SkillNo, Title, Desc } from "../Skills/index.style";
 
 function Skills() {
   const [skill, setSkill] = useState([

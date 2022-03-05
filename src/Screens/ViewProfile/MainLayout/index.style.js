@@ -1,13 +1,27 @@
 import styled from "styled-components";
 
+export const LeftSpace = styled.div`
+  width: 25%;
+  height: 100vh;
+  /* border: 2px solid red; */
+  padding: 0px;
+  margin: 0px;
+  /* position: relative; */
+  /* overflow-y: hidden; */
+  position: relative;
+`;
+
 export const LeftSection = styled.div`
   width: 25%;
   height: 100vh;
   /* border: 2px solid red; */
   padding: 0px;
   margin: 0px;
-  position: relative;
-  overflow-y: hidden;
+  /* position: relative; */
+  /* overflow-y: hidden; */
+  position: fixed;
+  left: 0;
+
 `;
 
 export const Image = styled.img.attrs((props) => ({
@@ -17,6 +31,7 @@ export const Image = styled.img.attrs((props) => ({
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
+  /* position: fixed; */
 `;
 export const OverLay = styled.div`
   background: linear-gradient(to top, #b788f6, rgba(20, 10, 10, 0.23));
@@ -33,7 +48,7 @@ export const Title = styled.div`
   height: 60px;
   background-color: #46079a;
   color: red;
-  font-size: 200px;
+  font-size: 20px;
   position: absolute;
   bottom: 100px;
 `;
