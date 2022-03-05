@@ -33,9 +33,9 @@ function Hero(props) {
           </LeftSide>
           <RightSide>
            {/*  <Img src='Images/heroImage' alt="girl image" /> */}
-           <Img src={hero} alt="hero image"/>
+            <Img src='/Images/heroImage.png' alt="hero image"/>
           </RightSide>
-        </HeroContent>
+          </HeroContent>
       </Header>
     </>
   );
