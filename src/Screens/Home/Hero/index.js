@@ -1,8 +1,6 @@
 import React from "react";
 import Names from "../../../Components/Names/en.json";
 import Button from "../../../Components/Button";
-import header from "../../../Images/headerImage.png";
-// import hero from "../../../Images/heroImage.png";
 import Navbar from "../Navbar";
 import {
   HeroTitle,
@@ -22,7 +20,7 @@ function Hero(props) {
     <>
       <Header>
         <Navbar />
-        <ImageHero src={header} alt="header image" />
+        <ImageHero src='Images/headerImage.png' alt="header image" />
         <HeroContent>
           <LeftSide>
             <HeroTitle>{Names["hero.title"]}</HeroTitle>
@@ -32,7 +30,6 @@ function Hero(props) {
             </Button>
           </LeftSide>
           <RightSide>
-           {/*  <Img src='Images/heroImage' alt="girl image" /> */}
             <Img src='/Images/heroImage.png' alt="hero image"/>
           </RightSide>
           </HeroContent>

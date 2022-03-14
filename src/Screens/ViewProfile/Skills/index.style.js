@@ -20,6 +20,7 @@ export const SkillNo = styled.div`
     padding: 20px;
     box-sizing: border-box;
     margin-top: 50px;
+   
     display: flex;
     flex-direction: column;
 `;
