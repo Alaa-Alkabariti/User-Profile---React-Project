@@ -1,8 +1,6 @@
-import Names from "../../../Components/Names/en.json";
-import styled from "styled-components";
 import { VscColorMode } from "react-icons/vsc";
-/* import img from '/Images/personalPhoto.png'
- */import {
+
+import {
   LeftSection,
   Image,
   RightSection,
@@ -14,9 +12,8 @@ import { VscColorMode } from "react-icons/vsc";
   Icons,
   Icon,
   LeftSpace,
-} from "../MainLayout/index.style.js";
-import About from "../About";
-import InternalNav from "../InternalNav/index";
+} from "./index.style";
+import InternalNav from "./InternalNav";
 
 function MainLayout(props) {
   // console.log('layout props', title);
@@ -33,7 +30,7 @@ function MainLayout(props) {
         </LeftSpace>
 
         <RightSection>
-         {/*  <InternalNav clk='1'/> */}
+          <InternalNav clk='1'/>
           {props.children}
         </RightSection>
 

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Aboutus = styled.div`
+    width: 100%;
+`;
+
+
 export const Details = styled.div `
     width: ${props => props.width};
     height: auto;
