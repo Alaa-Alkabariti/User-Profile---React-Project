@@ -1,5 +1,7 @@
 import "./App.css";
-import Layout from "./Layout";
+import Services from "./Screens/Services";
+import Skills from "./Screens/Skills";
+import Gallery from "./Screens/Gallery";
 import About from "./Screens/About";
 
 function App() {
@@ -11,8 +13,10 @@ function App() {
       {/* <Layout title="about"></Layout> */}
       {/* <InternalNav /> */}
 
-
-      <About />
+      <About />{/* 
+      <Skills />
+      <Services />
+      <Gallery /> */}
     </>
   );
 }

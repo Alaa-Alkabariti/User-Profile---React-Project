@@ -1,16 +1,18 @@
 import React from "react";
+import Layout from "../../Layout";
 import { Section, GalleryItem } from "./index.style";
-import { OverLay, Image } from "../MainLayout/index.style";
 
 function Gallery() {
   return (
     <>
+      <Layout title="Gallery">
       <Section>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>
       </Section>
+      </Layout>
     </>
   );
 }

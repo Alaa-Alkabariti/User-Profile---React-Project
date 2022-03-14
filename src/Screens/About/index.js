@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Layout from "../../Layout";
 import { Aboutus, Desc, Details, Title } from "./index.style";
-/* import personal from "personalPhoto.png"; */
+
+
 function About(props) {
   const [details, setDetails] = useState([
     {
@@ -18,14 +19,16 @@ function About(props) {
     },
   ]);
   return (
-    <Layout title="About" >
+   <>
+    {/* <Layout title="About" image="./personalPhoto.png" > */}
+    <Layout title="About" src="./personalPhoto.png" >
       {details.map((el) => (
         <Details width="80%" key={el.title}>
           <Title>{el.title}</Title>
           <Desc>{el.desc}</Desc>
         </Details>
       ))}
-    </Layout>
+    </Layout></>
   );
 }
 

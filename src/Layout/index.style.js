@@ -46,11 +46,14 @@ export const OverLay = styled.div`
 export const Title = styled.div`
   width: 50%;
   height: 60px;
+  line-height: 60px;
+  text-align: center;
   background-color: #46079a;
-  color: red;
+  color: #ffffff;
   font-size: 20px;
   position: absolute;
   bottom: 100px;
+  box-shadow: 1px 4px 4px #9990ff;
 `;
 
 export const Nav = styled.div`

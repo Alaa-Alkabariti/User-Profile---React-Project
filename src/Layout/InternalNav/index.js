@@ -1,7 +1,6 @@
 import { Nav } from "../index.style";
 import { ListItem, List } from "../InternalNav/index.style";
 
-
 function InternalNav() {
   function setHandleClicked() {}
   return (
