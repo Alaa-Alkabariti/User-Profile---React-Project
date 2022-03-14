@@ -16,24 +16,21 @@ import {
 import InternalNav from "./InternalNav";
 
 function MainLayout(props) {
-  // console.log('layout props', title);
   return (
     <>
       <Layout>
         <LeftSpace>
           <LeftSection color="blue">
-           {/*  <Image src={props.image} /> */}
-           <Image src={props.image} />
+            <Image src={props.image} />
             <OverLay />
             <Title>{props.title}</Title>
           </LeftSection>
         </LeftSpace>
 
         <RightSection>
-          <InternalNav clk='1'/>
+          <InternalNav clk="1" />
           {props.children}
         </RightSection>
-
         <Icons>
           <Arrow>
             <Icon>&#8249;</Icon>

@@ -1,7 +1,7 @@
 // import { SkillNo, Title, Desc } from "../SkillItem/index.style";
 import { useState } from "react";
-import { SkillsList, SkillNo, Title, Desc } from "../Skills/index.style";
-import MainLayout from '../MainLayout/index'
+import { SkillsList, SkillNo, Title, Desc } from "./index.style";
+import Layout from "../../Layout";
 
 function Skills() {
   const [skill, setSkill] = useState([
@@ -31,16 +31,18 @@ function Skills() {
     },
   ]);
   return (
-    <>
+    <>  
+    <Layout title="Skills" image="/public/Images/personalPhoto.png">
       <SkillsList>
         
         {skill.map((el) => (
-          <SkillNo width="48%" key={el.title}>
+          <SkillNo width="48.5%" key={el.title}>
             <Title>{el.title}</Title>
             <Desc>{el.desc}</Desc>
           </SkillNo>
         ))}
       </SkillsList>
+      </Layout>
     </>
   );
 }
