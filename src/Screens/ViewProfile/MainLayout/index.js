@@ -1,8 +1,8 @@
 import Names from "../../../Components/Names/en.json";
 import styled from "styled-components";
 import { VscColorMode } from "react-icons/vsc";
-
-import {
+/* import img from '/Images/personalPhoto.png'
+ */import {
   LeftSection,
   Image,
   RightSection,
@@ -13,9 +13,8 @@ import {
   Arrow,
   Icons,
   Icon,
-  LeftSpace
+  LeftSpace,
 } from "../MainLayout/index.style.js";
-import personalPhoto from "../../../Images/personalPhoto.png";
 import About from "../About";
 import InternalNav from "../InternalNav/index";
 
@@ -25,18 +24,16 @@ function MainLayout(props) {
     <>
       <Layout>
         <LeftSpace>
-
           <LeftSection color="blue">
-            {/* <Image src={card1} /> */}
-            <Image IMG={personalPhoto} />
+           {/*  <Image src={props.image} /> */}
+           <Image src={props.image} />
             <OverLay />
-
             <Title>{props.title}</Title>
           </LeftSection>
         </LeftSpace>
 
         <RightSection>
-          <InternalNav />
+         {/*  <InternalNav clk='1'/> */}
           {props.children}
         </RightSection>
 

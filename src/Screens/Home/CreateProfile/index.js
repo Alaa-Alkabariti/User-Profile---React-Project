@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../../../Components/Button";
-import arrow from "../../../Images/arrow.png";
 import Names from "../../../Components/Names/en.json";
 import { Create, Text } from "./index.style";
 import { Arrow } from "../Hero/index.style";

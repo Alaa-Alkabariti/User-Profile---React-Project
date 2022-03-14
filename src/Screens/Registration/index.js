@@ -1,5 +1,4 @@
 import React from "react";
-import profily from "../../Images/Profily.png";
 import Button from "../../Components/Button";
 import Names from "../../Components/Names/en.json";
 import { useState } from "react";
@@ -26,7 +25,7 @@ function Registration() {
     <>
       <Register>
         <Box>
-          <Image src={profily} />
+          <Image src='/Images/Profily.png' />
 
           {toggleState === false ? (
             <>

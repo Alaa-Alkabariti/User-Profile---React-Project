@@ -1,19 +1,17 @@
 import React from "react";
 import { Section, GalleryItem } from "./index.style";
-import galleryOne from '../../../Images/gallery.png'
-import { OverLay ,Image } from "../MainLayout/index.style";
+import { OverLay, Image } from "../MainLayout/index.style";
 
 function Gallery() {
   return (
     <>
-   {/*  <Image IMG={galleryOne} /> */}
-
-<Section>
-  <GalleryItem src={galleryOne}></GalleryItem>
-  <GalleryItem src={galleryOne}></GalleryItem>
-  <GalleryItem src={galleryOne}></GalleryItem>
-  <GalleryItem src={galleryOne}></GalleryItem>
-</Section></>
+      <Section>
+        <GalleryItem src="/Images/gallery.png"></GalleryItem>
+        <GalleryItem src="/Images/gallery.png"></GalleryItem>
+        <GalleryItem src="/Images/gallery.png"></GalleryItem>
+        <GalleryItem src="/Images/gallery.png"></GalleryItem>
+      </Section>
+    </>
   );
 }
 
