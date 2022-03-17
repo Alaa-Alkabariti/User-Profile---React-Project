@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../Media/index.style";
 
 export const LeftSpace = styled.div`
   width: 25%;
@@ -9,6 +10,9 @@ export const LeftSpace = styled.div`
   /* position: relative; */
   /* overflow-y: hidden; */
   position: relative;
+  @media ${devices.mobileL} {
+    width: 100%;
+  }
 `;
 
 export const LeftSection = styled.div`
@@ -21,18 +25,26 @@ export const LeftSection = styled.div`
   /* overflow-y: hidden; */
   position: fixed;
   left: 0;
-
+  @media ${devices.mobileL} {
+    width: 100%;
+    position: absolute;
+  }
 `;
 
 export const Image = styled.img`
-// .attrs((props) => ({
+  // .attrs((props) => ({
   // I created src attr as a props,, is it good? .....
   /* src: props.IMG, */
-// }))
+  // }))
 
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
+
+  @media ${devices.mobileL} {
+    height: 60vh;
+    width: 100%;
+  }
   /* position: fixed; */
 `;
 export const OverLay = styled.div`
@@ -43,6 +55,11 @@ export const OverLay = styled.div`
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
+
+  @media ${devices.mobileL} {
+    height: 60vh;
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -56,6 +73,11 @@ export const Title = styled.div`
   position: absolute;
   bottom: 100px;
   box-shadow: 1px 4px 4px #9990ff;
+
+  @media ${devices.mobileL} {
+    width: 80%;
+    top: 350px;
+  }
 `;
 
 export const Nav = styled.div`
@@ -67,12 +89,15 @@ export const Nav = styled.div`
 export const RightSection = styled.div`
   width: 75%;
   height: 20px;
-  /*   background-color:green;
- */
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+
+  @media ${devices.mobileL} {
+    width: 100%;
+   
+  }
 `;
 
 export const Layout = styled.div`
@@ -81,6 +106,11 @@ export const Layout = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+
+  @media ${devices.mobileL} {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const Theme = styled.div`
@@ -96,12 +126,20 @@ export const Theme = styled.div`
     cursor: pointer;
     color: #46079a;
   }
+
+  @media ${devices.mobileL} {
+    position: absolute;
+    top: 180px;
+    color: #ffffff;
+    position: absolute;
+    top: 240px;
+  }
 `;
 
 export const Arrow = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 `;
@@ -116,6 +154,11 @@ export const Icons = styled.div`
   margin: 20px;
   position: fixed;
   left: 92%;
+
+  @media ${devices.mobileL} {
+    position: absolute;
+    left: 85%;
+  }
 `;
 
 export const Icon = styled.span`
