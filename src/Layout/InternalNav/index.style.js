@@ -1,15 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { devices } from "../../Media/index.style";
 
 export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: start;
-  width: 75%;
-  margin-bottom: 100px;
- /*  position: fixed;
+  width: 90%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 200px;
+/*   background-color: #eeeeee;
+ */  margin: 0 auto;
+  /*  position: fixed;
   padding-bottom: 100px; */
+
+  @media ${devices.mobileL} {
+    position: absolute;
+    top: 500px;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    background-color:#e3e3e3;
+  }
 `;
 
 export const ListItem = styled(NavLink)`

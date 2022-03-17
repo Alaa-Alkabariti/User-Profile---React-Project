@@ -15,7 +15,7 @@ function App() {
       {/* <InternalNav /> */}
 
       <Routes>
-        <Route path="/about" element={<About /> } /> 
+        <Route path="/about" element={<About />} />
         {/* <Route path="/" element={<About /> } /> */}
         <Route path="/skills" element={<Skills />} />
         <Route path="/services" element={<Services />} />

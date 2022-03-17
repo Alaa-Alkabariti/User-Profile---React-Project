@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../Media/index.style";
 
 export const Aboutus = styled.div`
   width: 100%;
@@ -16,7 +17,13 @@ export const Details = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: start;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+
+  @media ${devices.mobileL} {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h3`
@@ -25,6 +32,9 @@ export const Title = styled.h3`
 
 export const Desc = styled.p`
   color: #707070;
+  @media ${devices.mobileL} {
+    font-size: 14px;
+  }
 `;
 
 export const Experience = styled.div`
@@ -32,18 +42,26 @@ export const Experience = styled.div`
   margin: 0 auto;
   height: auto;
   background-color: #e0e0ff;
-  margin-top: 100px;
+  margin-top: 60px;
+
+  @media ${devices.mobileL} {
+    padding-bottom: 50px;
+  }
 `;
 
 export const Education = styled.div`
   background-color: #e0e0ff;
   border: 1px solid #eeeeee;
-  margin-top: 100px;
+  margin-top: 0px;
   height: auto;
   width: 80%;
   /* background-color: blue; */
   margin-bottom: 100px;
   margin: 0 auto;
+
+  @media ${devices.mobileL} {
+    padding-bottom: 50px;
+  }
 `;
 
 export const EducationItem = styled.div`
@@ -55,10 +73,19 @@ export const EducationItem = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: center;
+
+  @media ${devices.mobileL} {
+    max-width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #aaaaaa;
+  }
 `;
 
 export const CertificateTitle = styled.p`
-  font-size: 30px;
+  font-size: 20px;
   color: #111111;
   font-weight: bold;
 `;
@@ -73,18 +100,34 @@ export const UniversityName = styled.p`
 export const FrotTo = styled.p`
   color: rebeccapurple;
   margin-left: 20%;
+  @media ${devices.mobilel} {
+    margin-left: 0px;
+  }
 `;
 
 export const Number = styled.span`
   color: black;
   font-size: 40px;
+  /* z-index: 9; */
   margin-right: 3%;
 `;
 
 export const Vertical = styled.div`
   border-left: 5px solid black;
-  height: 200px;
+  height: 17%;
+  /* z-index: 0; */
   position: absolute;
   left: 36.2%;
-  top: 37%;
+  top: ${(props) => props.top};
+
+  @media ${devices.mobileL} {
+    display: none;
+  }
+`;
+
+export const AboutSec = styled.div`
+margin-top: 100px;
+  @media ${devices.mobileL} {
+    margin-top: -200px;
+  }
 `;

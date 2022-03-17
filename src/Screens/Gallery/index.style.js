@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../Media/index.style";
 
 export const Section = styled.div`
   width: 80%;
@@ -14,6 +15,12 @@ export const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top:100px;
+
+  @media ${devices.mobileL} 
+  {
+    margin-top: -200px;
+  }
 `;
 
 export const GalleryItem = styled.img`
