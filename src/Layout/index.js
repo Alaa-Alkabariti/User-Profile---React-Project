@@ -21,7 +21,9 @@ function MainLayout(props) {
       <Layout>
         <LeftSpace>
           <LeftSection color="blue">
-            <Image src={props.image} />
+            <Image
+              src={props.image ? props.image : "Images/personalPhoto.png"}
+            />
             <OverLay />
             <Title>{props.title}</Title>
           </LeftSection>

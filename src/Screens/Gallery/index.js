@@ -5,7 +5,7 @@ import { Section, GalleryItem } from "./index.style";
 function Gallery() {
   return (
     <>
-      <Layout title="Gallery">
+      <Layout title="Gallery" image="">
       <Section>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>
         <GalleryItem src="/Images/gallery.png"></GalleryItem>

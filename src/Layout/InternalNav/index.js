@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Nav } from "../index.style";
 import { ListItem, List } from "../InternalNav/index.style";
 
@@ -7,7 +8,11 @@ function InternalNav() {
     <>
       <Nav>
         <List>
-          <ListItem
+          <ListItem to="/about">about</ListItem>
+          <ListItem to="/skills">Skills</ListItem>
+          <ListItem to="/services">Services</ListItem>
+          <ListItem to="/gallery">Gallery</ListItem>
+          {/* <ListItem
             borderBottom="3px solid #46079A"
             fontWeight="bold"
             onClick={() => setHandleClicked("0")}
@@ -15,8 +20,8 @@ function InternalNav() {
             About Me
           </ListItem>
           <ListItem onClick={() => setHandleClicked("1")}>Skills</ListItem>
-          <ListItem onClick={() => setHandleClicked("2")}>Services</ListItem>
-          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem>
+          >
+          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem> */}
         </List>
       </Nav>
     </>
