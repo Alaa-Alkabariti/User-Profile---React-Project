@@ -1,44 +1,41 @@
 // import { SkillNo, Title, Desc } from "../SkillItem/index.style";
 import { useState } from "react";
-import { SkillsList, SkillNo, Title, Desc } from "./index.style";
+import { SkillsList, SkillNo, Title, Experience , Image } from "./index.style";
 import Layout from "../../Layout";
 
 function Skills() {
   const [skill, setSkill] = useState([
-    {
-      title: "skill1",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
+     {
+      image: "Images/html.png",
+      title: "HTML",
+      expe: "95",
     },
     {
-      title: "skill2",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
+      image: "Images/javascript.png",
+      title: "JavaScript",
+      expe: "85",
+    }, 
+    {
+      image: "Images/html.png",
+      title: "HTML",
+      expe: "95",
     },
     {
-      title: "skill3",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
-    },
-    {
-      title: "skill4",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
-    },
-    {
-      title: "skill5",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
-    },
-    {
-      title: "skill6",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
-    },
+      image: "Images/javascript.png",
+      title: "JavaScript",
+      expe: "85",
+    }, 
   ]);
   return (
     <>  
-    <Layout title="Skills" image="/public/Images/personalPhoto.png">
+    <Layout title="Skills" image="Images/skills.png">
       <SkillsList>
         
         {skill.map((el) => (
-          <SkillNo width="48.5%" key={el.title}>
+          <SkillNo width="100%" key={el.title}>
+            <Image src={el.image}></Image>
             <Title>{el.title}</Title>
-            <Desc>{el.desc}</Desc>
+            <Experience>{el.expe} %</Experience>
           </SkillNo>
         ))}
       </SkillsList>

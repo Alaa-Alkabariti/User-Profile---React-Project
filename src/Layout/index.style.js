@@ -24,10 +24,12 @@ export const LeftSection = styled.div`
 
 `;
 
-export const Image = styled.img.attrs((props) => ({
+export const Image = styled.img`
+// .attrs((props) => ({
   // I created src attr as a props,, is it good? .....
-  src: props.IMG,
-}))`
+  /* src: props.IMG, */
+// }))
+
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
@@ -112,6 +114,8 @@ export const Icons = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 20px;
+  position: fixed;
+  left: 92%;
 `;
 
 export const Icon = styled.span`

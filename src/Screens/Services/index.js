@@ -22,10 +22,10 @@ function Services() {
     },
   ]);
   return (
-   <Layout title="Services">
+   <Layout title="Services" image="Images/services.png">
       <div>
       {details.map((el) => (
-        <Details width="75%" key={el.title}>
+        <Details width="80%" key={el.title}>
           <Title>{el.title}</Title>
           <Desc>{el.desc}</Desc>
         </Details>
