@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../../Layout";
 import { Details, Title, Desc } from "../About/index.style";
-import { ServiceSec } from "./index.style";
+import { ServiceSec , DetailsService } from "./index.style";
 
 function Services() {
   const [details, setDetails] = useState([
@@ -26,10 +26,10 @@ function Services() {
    <Layout title="Services" image="Images/services.png">
       <ServiceSec>
       {details.map((el) => (
-        <Details width="80%" key={el.title}>
+        <DetailsService width="80%" key={el.title}>
           <Title>{el.title}</Title>
           <Desc>{el.desc}</Desc>
-        </Details>
+        </DetailsService>
       ))}
     </ServiceSec>
    </Layout>

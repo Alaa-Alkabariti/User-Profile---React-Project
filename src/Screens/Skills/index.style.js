@@ -12,9 +12,11 @@ export const SkillsList = styled.div`
   flex-wrap: wrap;
   margin-top: 70px;
 
-  @media ${devices.mobileL} { 
-      padding-top: 50px;
+  @media ${devices.mobileL} {
     margin-top: -290px;
+    padding-bottom: 100px;
+    margin-top: -400px;
+
   }
 `;
 
@@ -64,10 +66,10 @@ export const Experience = styled.p`
   }
 
   @media ${devices.mobileL} {
-      font-size:16px;
-      font-weight: bold;
-      border-bottom: 1px solid black;
-    }
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+  }
 `;
 
 export const Image = styled.img`
@@ -78,6 +80,30 @@ export const Image = styled.img`
   }
 
   @media ${devices.mobileL} {
-      width: 30px
-    }
+    width: 30px;
+  }
+`;
+
+export const LeftSide = styled.div`
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Center = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+`;
+
+export const RightSide = styled.div`
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
 `;

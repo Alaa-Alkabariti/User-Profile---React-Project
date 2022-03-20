@@ -6,23 +6,25 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  width: 90%;
+  justify-content: center;
+  align-items: start; 
+    width: 60%;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 200px;
-/*   background-color: #eeeeee;
- */  margin: 0 auto;
+  /*   background-color: #eeeeee;
+ */
+  margin: 0 auto;
   /*  position: fixed;
   padding-bottom: 100px; */
 
   @media ${devices.mobileL} {
     position: absolute;
-    top: 500px;
+    top: 335px;
     width: 90%;
     margin: 0 auto;
     align-items: center;
-    background-color:#e3e3e3;
+    background-color: #e3e3e3;
   }
 `;
 
@@ -42,5 +44,6 @@ export const ListItem = styled(NavLink)`
   &.active {
     border-bottom: 3px solid #46079a;
     font-weight: bold;
+    text-transform: capitalize; 
   }
 `;

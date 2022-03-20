@@ -8,11 +8,20 @@ function InternalNav() {
     <>
       <Nav>
         <List>
-          <ListItem to="/about">about</ListItem>
-          <ListItem to="/skills">Skills</ListItem>
-          <ListItem to="/services">Services</ListItem>
-          <ListItem to="/gallery">Gallery</ListItem>
-          {/* <ListItem
+          <ListItem to="/">about</ListItem>
+          <ListItem to="/skills">skills</ListItem>
+          <ListItem to="/services">services</ListItem>
+          <ListItem to="/gallery">gallery</ListItem>
+        </List>
+      </Nav>
+    </>
+  );
+}
+
+export default InternalNav;
+
+{
+  /* <ListItem
             borderBottom="3px solid #46079A"
             fontWeight="bold"
             onClick={() => setHandleClicked("0")}
@@ -21,14 +30,8 @@ function InternalNav() {
           </ListItem>
           <ListItem onClick={() => setHandleClicked("1")}>Skills</ListItem>
           >
-          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem> */}
-        </List>
-      </Nav>
-    </>
-  );
+          <ListItem onClick={() => setHandleClicked("3")}>Gallery</ListItem> */
 }
-
-export default InternalNav;
 
 // import { Nav } from "../MainLayout/index.style";
 // import { ListItem, List } from "../InternalNav/index.style";

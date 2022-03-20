@@ -29,6 +29,14 @@ export const LeftSection = styled.div`
     width: 100%;
     position: absolute;
   }
+
+  &:hover {
+    #title {
+      background-color: #ffffff;
+      color: #000000;
+      /* transform: translate3d(0,10px,0); */
+    }
+  }
 `;
 
 export const Image = styled.img`
@@ -42,7 +50,7 @@ export const Image = styled.img`
   overflow-y: hidden;
 
   @media ${devices.mobileL} {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
   }
   /* position: fixed; */
@@ -57,7 +65,7 @@ export const OverLay = styled.div`
   overflow-y: hidden;
 
   @media ${devices.mobileL} {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
   }
 `;
@@ -76,7 +84,7 @@ export const Title = styled.div`
 
   @media ${devices.mobileL} {
     width: 80%;
-    top: 350px;
+    top: 250px;
   }
 `;
 
@@ -96,7 +104,6 @@ export const RightSection = styled.div`
 
   @media ${devices.mobileL} {
     width: 100%;
-   
   }
 `;
 
@@ -132,7 +139,7 @@ export const Theme = styled.div`
     top: 180px;
     color: #ffffff;
     position: absolute;
-    top: 240px;
+    top: 140px;
   }
 `;
 
