@@ -14,6 +14,10 @@ import {
   Number,
   Vertical,
   AboutSec,
+  LeftSide,
+  RightSide,
+  Dot,
+  Dot2,
 } from "./index.style";
 
 function About(props) {
@@ -25,21 +29,14 @@ function About(props) {
   const [educItem, setEduItem] = useState([
     {
       /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering11",
+      certificateTitle: "computer Engineering Bachelor",
       universityName: "Isalmic university",
       from: "12/3/2021",
       to: "12/2/2022",
     },
     {
       /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering22",
-      universityName: "Isalmic university",
-      from: "12/3/2021",
-      to: "12/2/2022",
-    },
-    {
-      /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering33",
+      certificateTitle: "Administration Master",
       universityName: "Isalmic university",
       from: "12/3/2021",
       to: "12/2/2022",
@@ -49,22 +46,20 @@ function About(props) {
   const [expeItem, setExpetem] = useState([
     {
       /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering1",
-      universityName: "Isalmic university",
+      CompanyName: "MAF company",
+      from: "12/3/2021",
+      to: "12/2/2022",
+      icon: <>&#10113;</>,
+    },
+    {
+      /* number: `&#1011`, */
+      CompanyName: "Company 2",
       from: "12/3/2021",
       to: "12/2/2022",
     },
     {
       /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering2",
-      universityName: "Isalmic university",
-      from: "12/3/2021",
-      to: "12/2/2022",
-    },
-    {
-      /* number: `&#1011`, */
-      certificateTitle: "Computer Engineering3",
-      universityName: "Isalmic university",
+      CompanyName: "Company 3",
       from: "12/3/2021",
       to: "12/2/2022",
     },
@@ -77,7 +72,44 @@ function About(props) {
             <Title>{title}</Title>
             <Desc>{desc}</Desc>
           </Details>
+
           <Education>
+            <Title>Education</Title>
+            {educItem.map((el) => (
+              <EducationItem key={el.certificateTitle}>
+                <LeftSide>
+                  <Dot></Dot>
+                </LeftSide>
+                <RightSide>
+                  <CertificateTitle>{el.certificateTitle} </CertificateTitle>
+                  <UniversityName>{el.universityName}</UniversityName>
+                  <FrotTo>
+                    From {el.from} To {el.to}
+                  </FrotTo>
+                </RightSide>
+              </EducationItem>
+            ))}
+          </Education>
+
+          <Experience>
+            <Title>Experience</Title>
+            {expeItem.map((el) => (
+              <EducationItem key={el.certificateTitle}>
+                <LeftSide>
+                  <Dot2></Dot2>
+                </LeftSide>
+                <RightSide>
+                  <CertificateTitle>{el.CompanyName} </CertificateTitle>
+                  <UniversityName>{el.universityName}</UniversityName>
+                  <FrotTo>
+                    From {el.from} To {el.to}
+                  </FrotTo>
+                </RightSide>
+              </EducationItem>
+            ))}
+          </Experience>
+
+          {/*  <Education>
             {educItem.map((el) => (
               <EducationItem key={el.certificateTitle}>
                 <Vertical top="44%"></Vertical>
@@ -90,14 +122,14 @@ function About(props) {
                 </FrotTo>
               </EducationItem>
             ))}
-          </Education>
+          </Education> */}
 
-          <Experience>
+          {/*  <Experience>
             {expeItem.map((el) => (
-              <EducationItem key={el.certificateTitle}>
+              <EducationItem key={el.CompanyName}>
                 <Vertical top="71%  "></Vertical>
-                <Number>&#10113;</Number>
-                <CertificateTitle>{el.certificateTitle} - </CertificateTitle>
+                <Number>{el.icon}</Number>
+                <CertificateTitle>{el.CompanyName} - </CertificateTitle>
                 <UniversityName>{el.universityName}</UniversityName>
                 <br></br>
                 <FrotTo>
@@ -105,7 +137,7 @@ function About(props) {
                 </FrotTo>
               </EducationItem>
             ))}
-          </Experience>
+          </Experience> */}
         </AboutSec>
       </Layout>
     </>

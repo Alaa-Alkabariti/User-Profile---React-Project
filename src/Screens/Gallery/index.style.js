@@ -10,16 +10,16 @@ export const Section = styled.div`
   padding: 50px;
   border: 0.5px solid #eeeeee;
   box-sizing: border-box;
-  position: relative;
+  /*   position: relative;
+ */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top:100px;
+  margin-top: 100px;
 
-  @media ${devices.mobileL} 
-  {
-    margin-top: -200px;
+  @media ${devices.mobileL} {
+    margin-top: -350px;
   }
 `;
 
@@ -28,8 +28,17 @@ export const GalleryItem = styled.img`
   border: 0.2px solid #aaaa;
   margin-bottom: 20px;
   height: auto;
-  &:hover {
-    box-shadow: 5px 5px 5px #aaaaaa;
-    border: 1px solid #46079a;
-  }
+  position: relative; //1
+  top:0px;
 `;
+
+/* export const OverLay = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  background-color:green;
+  &:hover {
+    opacity: 1;
+  }
+`; */

@@ -15,11 +15,11 @@ function App() {
       {/* <InternalNav /> */}
 
       <Routes>
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<About />} />
         {/* <Route path="/" element={<About /> } /> */}
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="skills" element={<Skills />} />
+        <Route path="services" element={<Services />} />
+        <Route path="gallery" element={<Gallery />} />
       </Routes>
       {/* <About /> */}
       {/* <Skills /> */}

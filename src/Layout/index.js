@@ -25,7 +25,7 @@ function MainLayout(props) {
               src={props.image ? props.image : "Images/personalPhoto.png"}
             />
             <OverLay />
-            <Title>{props.title}</Title>
+            <Title id="title">{props.title}</Title>
           </LeftSection>
         </LeftSpace>
 

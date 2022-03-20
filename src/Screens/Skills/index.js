@@ -1,6 +1,6 @@
 // import { SkillNo, Title, Desc } from "../SkillItem/index.style";
 import { useState } from "react";
-import { SkillsList, SkillNo, Title, Experience , Image } from "./index.style";
+import { SkillsList, SkillNo, Title, Experience , Image ,LeftSide , Center ,RightSide } from "./index.style";
 import Layout from "../../Layout";
 
 function Skills() {
@@ -17,12 +17,12 @@ function Skills() {
     }, 
     {
       image: "Images/html.png",
-      title: "HTML",
+      title: "Css",
       expe: "95",
     },
     {
       image: "Images/javascript.png",
-      title: "JavaScript",
+      title: "React",
       expe: "85",
     }, 
   ]);
@@ -33,9 +33,15 @@ function Skills() {
         
         {skill.map((el) => (
           <SkillNo width="100%" key={el.title}>
+            <LeftSide>
             <Image src={el.image}></Image>
-            <Title>{el.title}</Title>
+            </LeftSide>
+           <Center>
+           <Title>{el.title}</Title>
+           </Center>
+           <RightSide>
             <Experience>{el.expe} %</Experience>
+           </RightSide>
           </SkillNo>
         ))}
       </SkillsList>
