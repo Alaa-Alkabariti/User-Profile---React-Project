@@ -4,11 +4,8 @@ import { devices } from "../Media/index.style";
 export const LeftSpace = styled.div`
   width: 25%;
   height: 100vh;
-  /* border: 2px solid red; */
   padding: 0px;
   margin: 0px;
-  /* position: relative; */
-  /* overflow-y: hidden; */
   position: relative;
   @media ${devices.mobileL} {
     width: 100%;
@@ -18,11 +15,8 @@ export const LeftSpace = styled.div`
 export const LeftSection = styled.div`
   width: 25%;
   height: 100vh;
-  /* border: 2px solid red; */
   padding: 0px;
   margin: 0px;
-  /* position: relative; */
-  /* overflow-y: hidden; */
   position: fixed;
   left: 0;
   @media ${devices.mobileL} {
@@ -34,7 +28,6 @@ export const LeftSection = styled.div`
     #title {
       background-color: #ffffff;
       color: #000000;
-      /* transform: translate3d(0,10px,0); */
     }
   }
 `;
@@ -53,7 +46,6 @@ export const Image = styled.img`
     height: 40vh;
     width: 100%;
   }
-  /* position: fixed; */
 `;
 export const OverLay = styled.div`
   background: linear-gradient(to top, #b788f6, rgba(20, 10, 10, 0.23));
