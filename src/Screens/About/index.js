@@ -18,6 +18,9 @@ import {
   RightSide,
   Dot,
   Dot2,
+  NewLeftSide,
+  NewLine,
+  NewDot,
 } from "./index.style";
 
 function About(props) {
@@ -77,9 +80,10 @@ function About(props) {
             <Title>Education</Title>
             {educItem.map((el) => (
               <EducationItem key={el.certificateTitle}>
-                <LeftSide>
-                  <Dot></Dot>
-                </LeftSide>
+                <NewLeftSide>
+                  <NewLine />
+                  <NewDot />
+                </NewLeftSide>
                 <RightSide>
                   <CertificateTitle>{el.certificateTitle} </CertificateTitle>
                   <UniversityName>{el.universityName}</UniversityName>

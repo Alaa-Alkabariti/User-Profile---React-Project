@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import Media from '../../../Media/index.style';
-import {media} from '../../../Media/index.style' 
+/* import {media} from '../../../Media/index.style' 
+ */
 
 
-
-/* export const media = {
-    mobile : "minWidth : 320px",
-    ipad : "maxWid : 760px"
-  }  */
   
   
   export const BeautiflDesig = styled.div`
@@ -42,12 +38,7 @@ import {media} from '../../../Media/index.style'
     display: flex;
     flex-direction: column;
     justify-content: center;
-    ${media.mobile} {
-      width: 100%;
-    }
-    ${media.mobile} {
-      width: 100%;
-    } ; 
+ 
   `;
   
   export const RightImages = styled.div`
@@ -59,15 +50,7 @@ import {media} from '../../../Media/index.style'
     justify-content: center;
     min-width: 300px;
     align-items: flex-end;
-    ${media.mobile} {
-      width: 100%;
-      margin-top: 200px;
-      background-color: red;
-    }
-     ${media.mobile} {
-      width: 10%;
-      background-color: yellow;
-    } ; 
+
   `;
   
   export const Imag = styled.img`

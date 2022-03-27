@@ -21,7 +21,7 @@ export const TwoButtons = styled.div`
   align-items: center;
 `;
 
-export const Link = styled.a`
+export const Linko = styled.a`
   color: #515151;
   font-weight: bold;
   padding-right: 15px;

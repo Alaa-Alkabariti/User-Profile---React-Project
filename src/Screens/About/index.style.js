@@ -81,8 +81,12 @@ export const EducationItem = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  /* justify-content: start; */
   align-items: center;
+
+  /* border: 3px solid #00f;
+  padding: 10px;
+  margin: 5px auto; */
   /*  border-bottom: .5px solid #eeeeee; */
 
   @media ${devices.mobileL} {
@@ -145,18 +149,20 @@ export const AboutSec = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  width: 5.5%;
-  border-left: 4px solid #eeeeee;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
+  width: 5.5%; //-
+  border-left: 4px solid #eeeeee; //
+  /* height: 100%; */ // +
+  /* background-color: #080; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* padding-top: 40px; */
   padding-bottom: 120px;
   position: relative;
-  &:first-child {
+  /* &:first-child {
     border-left: 4px solid #eeeeee;
-  }
+  } */
 
   @media ${devices.mobileL} {
     display: none;
@@ -173,17 +179,43 @@ export const Dot = styled.div`
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 50px;
+  right: 39px;
   z-index: 0;
 `;
 
 export const Dot2 = styled.div`
-  border-radius: 50%;
-  background-color: #46079a;
   width: 20px;
   height: 20px;
-  margin-top: 48px;
+  border-radius: 50%;
+  background-color: #46079a;
+  /* margin-top: 48px; */ // -
   position: absolute;
-  right: 50px;
+  right: 39px;
   z-index: 0;
 `;
+
+export const NewLeftSide = styled.div`
+  width: 5%;
+  height: 150px;
+  position: relative;
+  /* border: 1px solid #00f; */
+  display: flex;
+  justify-content: center;
+`;
+
+export const NewLine = styled.div`
+  height: 100%;
+  width: 3px;
+  margin: auto;
+  background-color: #333;
+`;
+
+export const NewDot = styled.div`
+width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #46079a;
+  position: absolute;
+  margin: auto;
+  `;
+  

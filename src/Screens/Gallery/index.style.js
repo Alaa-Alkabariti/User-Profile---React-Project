@@ -15,6 +15,7 @@ export const GallerySec = styled.div`
 
 export const MainImage = styled.img`
   width: 100%;
+  margin-bottom: 20px;
 `;
 
 export const OverLay = styled.div`
@@ -22,18 +23,14 @@ export const OverLay = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  /* display: none; */
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: none;
+  background-color: #4444448c;
 `;
 
 export const Image = styled.img`
-  opacity: 100;
+  /* opacity: 100; */
   width: 30%;
-  opacity: 1;
+  /* opacity: 1; */
   height: calc(100% / 4);
   cursor: pointer;
 
@@ -55,8 +52,8 @@ export const GalleryItem = styled.div`
 
   &:hover ${OverLay} {
     display: block;
-    background-color: #eeeee0;
-    opacity: 0.7;
+    /* background-color: #eeeee0; */
+    /* opacity: 0.7; */
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -8,70 +8,50 @@ import {
   OverLay,
   Image,
 } from "./index.style";
+import GalleryComponent from "./GalleryComponent";
+import { getNextKeyDef } from "@testing-library/user-event/dist/keyboard/getNextKeyDef";
 
 function Gallery() {
   const [images, setImages] = useState([
     {
-      id: "0",
-      mainImage: "Images/gallery.png",
-      id: "1",
-      imageOne: "Images/gallery1.png",
-      id: "2",
-      imageTwo: "Images/gallery2.png",
-      id: "3",
-      imageThree: "Images/gallery3.png",
-      id: "4",
-      imageFour: "Images/gallery.png",
+      galleryImages: [
+        { id: "0", path: "Images/gallery.png" },
+        { id: "1", path: "Images/gallery1.png" },
+        { id: "2", path: "Images/gallery2.png" },
+        { id: "3", path: "Images/gallery3.png" },
+      ],
+      discription: "dfjaklfjaklfa",
+      title: "title",
     },
     {
-      id: "0",
-      mainImage: "Images/gallery1.png",
-      id: "1",
-      imageOne: "Images/gallery1.png",
-      id: "2",
-      imageTwo: "Images/gallery2.png",
-      id: "3",
-      imageThree: "Images/gallery3.png",
-      id: "4",
-      imageFour: "Images/gallery.png",
+      galleryImages: [
+        { id: "0", path: "Images/gallery3.png" },
+        { id: "1", path: "Images/gallery1.png" },
+        { id: "2", path: "Images/gallery2.png" },
+        { id: "3", path: "Images/gallery3.png" },
+      ],
+      discription: "dfjaklfjaklfa",
+      title: "title",
     },
+
   ]);
 
-   function handleImageClick(e) {
-    e.target.setAttribute("src", "Images/gallery3.png");
-    e.target.setAttribute("alt", "image");
-  } 
-/* 
-  function handleImageClick(e) {
-   <>
-    {images.map((el) => (
-      <GalleryItem key={el.id}>
-        <MainImage src={el.mainImage}></MainImage>
-        <OverLay>
-          <Image onClick={handleImageClick} src={el.imageOne}></Image>
-          <Image src={el.imageTwo}></Image>
-          <Image src={el.imageThree}></Image>
-          <Image src={el.imageFour}></Image>
-        </OverLay>
-      </GalleryItem>
-    ))}</>
-  }; */
+ 
+  // const handleImageClick = (value) => {
+  //   console.log("hi", value);
+  //   setCuttentImage(value);
+
+  //   // e.target.setAttribute("src", "Images/gallery3.png");
+  //   // e.target.setAttribute("alt", "image");
+  // };
 
   return (
     <>
       <Layout title="Gallery" image="Images/galleryImg.png">
         <GallerySec>
-          {images.map((el) => (
-            <GalleryItem key={el.id}>
-              <MainImage src={el.mainImage}></MainImage>
-              <OverLay>
-                <Image onClick={handleImageClick} src={el.imageOne}></Image>
-                <Image src={el.imageTwo}></Image>
-                <Image src={el.imageThree}></Image>
-                <Image src={el.imageFour}></Image>
-              </OverLay>
-            </GalleryItem>
-          ))}
+            {images.map((box) => (
+              <GalleryComponent box={box} />
+            ))}
         </GallerySec>
       </Layout>
     </>
@@ -79,3 +59,37 @@ function Gallery() {
 }
 
 export default Gallery;
+
+/* 
+<Layout title="Gallery" image="Images/galleryImg.png">
+<GallerySec>
+  {images.map((el) =>
+      <GalleryItem>
+    {el.galleryImages.map((items, index) => (
+      <>
+        <MainImage src={currentImage}></MainImage>
+        <OverLay>
+          <Image
+            onClick={() => handleImageClick(el.galleryImages[0].path)}
+            src={el.galleryImages[0].path}
+          ></Image>
+          <Image
+            onClick={() => handleImageClick(el.galleryImages[1].path)}
+            src={el.galleryImages[1].path}
+          ></Image>
+          <Image
+            onClick={() => handleImageClick(el.galleryImages[2].path)}
+            src={el.galleryImages[2].path}
+          ></Image>
+          <Image
+            onClick={() => handleImageClick(el.galleryImages[3].path)}
+            src={el.galleryImages[3].path}
+          ></Image>
+        </OverLay>
+      </>
+
+    ))}
+    </GalleryItem>
+  )}
+</GallerySec>
+</Layout> */

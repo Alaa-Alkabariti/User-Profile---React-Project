@@ -2,13 +2,13 @@ import React from "react";
 import Utilization from "../../../Components/Names/en.json";
 import HeaderSection from "../HeadSection";
 import {
-  media,
   BeautiflDesig,
   Images,
   LeftImages,
   RightImages,
   Imag,
 } from "./index.style";
+
 
 function CreateBeautifulDesig() {
   return (

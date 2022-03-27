@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../Components/Button";
 import Names from "../../Components/Names/en.json";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   media,
   Register,
@@ -15,17 +16,20 @@ import {
 } from "./index.style";
 
 function Registration() {
+  const navigate = useNavigate();
+
   const [toggleState, setToggleState] = useState(false);
 
   const toggleTab = (value) => {
     setToggleState(value);
   };
 
+
   return (
     <>
       <Register>
         <Box>
-          <Image src='/Images/Profily.png' />
+          <Image src="/Images/Profily.png" />
 
           {toggleState === false ? (
             <>
@@ -70,7 +74,9 @@ function Registration() {
               <Form>
                 <Input type="text" placeholder="Username" />
                 <Input type="email" placeholder="Email Address" />
-                <Button width="277">{Names["Log In"]}</Button>
+                <Button onClick={() => navigate("/Home")}>
+                  {Names["Log In"]}
+                </Button>
               </Form>
             </>
           )}
