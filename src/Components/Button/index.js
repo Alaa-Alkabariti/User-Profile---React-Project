@@ -7,6 +7,7 @@ const Buttons = styled.button`
   color: white;
   height: 46px;
   width: ${(props) => props.width}px;
+  color: #ffffff;
 
   border-radius: 4px;
   border: 0.1px solid #aaaaaa;

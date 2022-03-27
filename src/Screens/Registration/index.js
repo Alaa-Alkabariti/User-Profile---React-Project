@@ -74,7 +74,7 @@ function Registration() {
               <Form>
                 <Input type="text" placeholder="Username" />
                 <Input type="email" placeholder="Email Address" />
-                <Button onClick={() => navigate("/Home")}>
+                <Button width={277} onClick={() => navigate("/Home")}>
                   {Names["Log In"]}
                 </Button>
               </Form>

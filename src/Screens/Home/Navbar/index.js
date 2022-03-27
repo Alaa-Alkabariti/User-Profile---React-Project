@@ -17,8 +17,8 @@ function Navbar(props) {
       <NavTag>
         <img src="/Images/profily.png" alt="logo" />
         <TwoButtons>
-          <Link to="registration">{Names["Try It"]}</Link>
-          <Link to="../registration">{Names["Log In"]}</Link>
+        <Linko><Link to="registration">{Names["Try It"]}</Link></Linko>
+         <Button width="100"> <Link to="../registration">{Names["Log In"]}</Link></Button>
         </TwoButtons>
       </NavTag>
     </>
