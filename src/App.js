@@ -7,11 +7,13 @@ import Home from "./Screens/Home/index";
 import { Route, Routes } from "react-router-dom";
 import Registration from "./Screens/Registration";
 import Names from "./Components/Names/en.json";
+import ManageAbout from "./Screens/AdminScreens/ManageAbout";
 
 function App() {
   return (
     <>
-      <Routes>
+      <ManageAbout />
+      {/*     <Routes>
         <Route exact path="registration" element={<Registration />} />
         <Route exact path="registration" element={<Registration />} />
         <Route exact path="/" element={<Home />} />
@@ -19,14 +21,14 @@ function App() {
         <Route exact path="skills" element={<Skills />} />
         <Route exact path="services" element={<Services />} />
         <Route exact path="gallery" element={<Gallery />} />
-      </Routes>
+      </Routes>  */}
 
       {/* <Registration /> */}
-
       {/* <Layout title="about"></Layout> */}
+
       {/* <InternalNav /> */}
 
-      {/* <About /> */}
+      {/* <About />  */}
       {/* <Skills /> */}
       {/* <Services /> */}
       {/* <Gallery />  */}
