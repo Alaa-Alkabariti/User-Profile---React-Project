@@ -52,7 +52,7 @@ function Registration() {
                 <Input type="email" placeholder="Email Address" />
                 <Input type="password" placeholder="Password" />
                 <Input type="password" placeholder="Confirm Password" />
-                <Button width="277">{Names["Sign Up"]}</Button>
+                <Button width="277" onClick={() => navigate("../Home")}>{Names["Sign Up"]}</Button>
               </Form>
             </>
           ) : (
