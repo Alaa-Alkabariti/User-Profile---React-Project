@@ -51,3 +51,9 @@ export const Header = styled.div`
     margin-left: 300px;
     flex-direction:row;
 `;
+
+
+export const ServicesList = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`;
