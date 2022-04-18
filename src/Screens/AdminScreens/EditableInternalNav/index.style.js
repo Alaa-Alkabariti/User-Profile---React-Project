@@ -31,7 +31,7 @@ export const TitlesList = styled.div`
 `;
 
 export const Header = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
 `;
@@ -81,7 +81,7 @@ export const TitleInput = styled.input`
   width: 100%;
   margin-left: 3px;
   height: 36px;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   background-color: #efefef;
   box-shadow: 3px 3px 3px #eeeeee;
   box-shadow: 3px 3px 3px #eeeeee;

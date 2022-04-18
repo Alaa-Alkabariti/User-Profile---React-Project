@@ -85,7 +85,7 @@ export const Button = styled.button`
 `;
 
 export const EducationsList = styled.div`
-   width: 79%;
+  width: 79%;
   height: auto;
   box-shadow: 3px 3px 3px #eeeeee;
   display: flex;
@@ -127,9 +127,8 @@ export const ColumnFour = styled.div`
 `;
 
 export const EducationsListHeader = styled.div`
-   width: 79%;
+  width: 79%;
   height: auto;
-  background-color: red;
   box-shadow: 3px 3px 3px #eeeeee;
   display: flex;
   flex-direction: row;
@@ -138,4 +137,56 @@ export const EducationsListHeader = styled.div`
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+`;
+
+export const Delete = styled.button`
+  background-color: red;
+  color: white;
+  text-align: right;
+  /* margin-left: 100px; */
+  border-radius: 4px;
+  border: 0.3px solid #e4e4e4;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #eeeeee;
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+
+export const Table = styled.table`
+  width: 100%;
+  box-shadow: 3px 3px 3px #eeeeee;
+  border: 0.5px solid #eeeeee;
+  padding: 10px 0px;
+  border-collapse: collapse;
+`;
+
+export const Message = styled.h4`
+  color: #000;
+  background-color: #d9cde9;
+  width: 80%;
+  text-align: center;
+  padding: 10px 0px;
+`;
+
+export const Tr = styled.tr`
+  text-align: center;
+  border: 02px solid #eeeeee;
+`;
+
+export const Th = styled.th`
+  background-color: #eeeeee;
+  text-align: center;
+  border: 0.5px solid #eeeeee;
+  width: auto;
+`;
+
+export const Td = styled.td`
+  background-color: #ffffff;
+  border: 0.5px solid #eeeeee;
+  text-align: center;
+  width: auto;
+  &:hover {
+    color: gray;
+  }
 `;

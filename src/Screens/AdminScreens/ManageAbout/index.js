@@ -8,17 +8,20 @@ import {
   EducationForm,
   Button,
   ExperienceForm,
-  EducationsList,
-  ColumnOne,
-  ColumnTwo,
-  ColumnThree,
-  ColumnFour,
   EducationsListHeader,
+  Delete,
+  Table,
+  Message,
+  Tr,
+  Th,
+  Td,
 } from "./index.style";
 
 function ManageAbout() {
+  const [message, setMessage] = useState("");
   const [initialFormDataEducation, setInitialFormData] = useState([]);
   const [formDataEducation, updateFormData] = useState({
+    id: 1,
     Faculty: "",
     University: "",
     From: "",
@@ -30,27 +33,51 @@ function ManageAbout() {
       ...formDataEducation,
       [e.target.name]: e.target.value.trim(),
     });
-    console.log("formData", formDataEducation);
+    console.log("formData", formDataEducation.id);
   };
 
+  let idy = initialFormDataEducation.length;
   const handleSubmitEducation = (e) => {
     e.preventDefault();
-    setInitialFormData([...initialFormDataEducation, formDataEducation]);
-    updateFormData({ Faculty: "", University: "", From: "", To: "" });
-  };
-  console.log(formDataEducation); //for testing
+    console.log("Number of education list items", formDataEducation.id);
+    setInitialFormData([
+      ...initialFormDataEducation,
+      {
+        id: idy,
+        Faculty: formDataEducation.Faculty,
+        University: formDataEducation.University,
+        From: formDataEducation.From,
+        To: formDataEducation.To,
+      },
+    ]);
 
+    setMessage("Element #" + (idy + 1) + " was added successfully");
+    updateFormData({ Faculty: "", University: "", From: "", To: "" });
+    console.log(initialFormDataEducation);
+  };
+
+
+
+  
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   const [initialFormDataExperience, setInitialFormDataExperience] = useState(
     []
   ); //array
   const [formDataExperience, updateFormDataExperience] = useState({
+    id: 0,
     Certificate: "",
     University2: "",
     From2: "",
     To2: "",
   });
+  let idExp = initialFormDataExperience.length;
+
+  function deleteItem(el) {
+    const currentID = el.id
+    setInitialFormData(initialFormDataEducation.filter((items) => items.id !== currentID)) 
+    setInitialFormDataExperience(initialFormDataExperience.filter((items) => items.id !== currentID)) 
+  }
 
   function handleChangeExperience(e) {
     updateFormDataExperience({
@@ -65,7 +92,13 @@ function ManageAbout() {
     console.log("alaa");
     setInitialFormDataExperience([
       ...initialFormDataExperience,
-      formDataExperience,
+      {
+        id: idExp,
+        Certificate: formDataExperience.Certificate,
+        University2: formDataExperience.University2,
+        From2: formDataExperience.From2,
+        To2: formDataExperience.To2,
+      },
     ]);
     updateFormDataExperience({
       Certificate: "",
@@ -126,20 +159,35 @@ function ManageAbout() {
               <Button onClick={handleSubmitEducation}>ADD</Button>
             </EducationSection>
           </form>
+          {initialFormDataEducation.length === 0 ? "" : <>{message}</>}
           <EducationsListHeader>
-            <ColumnOne>Faculty Name</ColumnOne>
-            <ColumnTwo>University Name</ColumnTwo>
-            <ColumnThree>Started Date</ColumnThree>
-            <ColumnFour>End Date</ColumnFour>
+            <Table>
+              <thead>
+                <Tr>
+                  <Th>#</Th>
+                  <Th>Faculty Name</Th>
+                  <Th>University Name</Th>
+                  <Th>Start Date</Th>
+                  <Th>End Date</Th>
+                  <Th>Action</Th>
+                </Tr>
+              </thead>
+              <tbody>
+                {initialFormDataEducation.map((el) => (
+                  <Tr key={el.id}>
+                    <Td>{el.id + 1}</Td>
+                    <Td>{el.Faculty}</Td>
+                    <Td>{el.University}</Td>
+                    <Td>{el.From}</Td>
+                    <Td>{el.To}</Td>
+                    <Td>
+                      <Delete onClick={() => deleteItem(el)}>Delete</Delete>
+                    </Td>
+                  </Tr>
+                ))}
+              </tbody>
+            </Table>
           </EducationsListHeader>
-          {initialFormDataEducation.map((el) => (
-            <EducationsList key={el.i++}>
-              <ColumnOne>{el.Faculty}</ColumnOne>
-              <ColumnTwo>{el.University}</ColumnTwo>
-              <ColumnThree>{el.From}</ColumnThree>
-              <ColumnFour>{el.To}</ColumnFour>
-            </EducationsList>
-          ))}
         </EducationForm>
 
         <ExperienceForm>
@@ -190,19 +238,33 @@ function ManageAbout() {
             </EducationSection>
           </form>
           <EducationsListHeader>
-            <ColumnOne>Certificate Ttile</ColumnOne>
-            <ColumnTwo>University Name</ColumnTwo>
-            <ColumnThree>Start Date</ColumnThree>
-            <ColumnFour>End Date</ColumnFour>
+            <Table>
+              <thead>
+                <Tr>
+                  <Th>#</Th>
+                  <Th>Certificate Ttile</Th>
+                  <Th>University Name</Th>
+                  <Th>Start Date</Th>
+                  <Th>End Date</Th>
+                  <Th>Action</Th>
+                </Tr>
+              </thead>
+              <tbody>
+                {initialFormDataExperience.map((el) => (
+                  <Tr key={el.id}>
+                    <Td>{el.id + 1}</Td>
+                    <Td>{el.Certificate}</Td>
+                    <Td>{el.University2}</Td>
+                    <Td>{el.From2}</Td>
+                    <Td>{el.To2}</Td>
+                    <Td>
+                      <Delete onClick={() => deleteItem(el)}>Delete</Delete>
+                    </Td>
+                  </Tr>
+                ))}
+              </tbody>
+            </Table>
           </EducationsListHeader>
-          {initialFormDataExperience.map((el) => (
-            <EducationsList key={el.i++}>
-              <ColumnOne>{el.Certificate}</ColumnOne>
-              <ColumnTwo>{el.University2}</ColumnTwo>
-              <ColumnThree>{el.From2}</ColumnThree>
-              <ColumnFour>{el.To2}</ColumnFour>
-            </EducationsList>
-          ))}
         </ExperienceForm>
       </MainLayout>
     </>

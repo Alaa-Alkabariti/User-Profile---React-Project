@@ -15,10 +15,10 @@ import ManageGallery from "./Screens/AdminScreens/GalleryManage";
 function App() {
   return (
     <>
-      <ManageAbout />
-      {/* <ManageSkills />
-      <ManageServices />
-      <ManageGallery /> */}
+      {/* <ManageAbout />  */}
+      {/* <ManageSkills />  */}
+      {/* <ManageServices /> */}
+      <ManageGallery />
       {/*     <Routes>
         <Route exact path="registration" element={<Registration />} />
         <Route exact path="registration" element={<Registration />} />

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import MainLayout from "../../../Layout";
-import { Button, ColumnFour, ColumnOne, ColumnThree, ColumnTwo } from "../ManageAbout/index.style";
-import { Form, Input , MainImage , ImageOne, ImageTwo , ImageThree ,Header } from "./index.style";
+import { Img } from "../ManagaeSkills/index.style";
+import { Button, Delete, Table, Td, Th, Tr } from "../ManageAbout/index.style";
+import { Form, Input, Header } from "./index.style";
+import { FcAddImage } from "react-icons/fc";
 
 function ManageGallery() {
   const [initialGallerytItems, setInitialGalleryItems] = useState([]);
@@ -13,6 +15,12 @@ function ManageGallery() {
     OverLayThree: "",
   });
 
+  let icon = <FcAddImage />;
+
+  const [ImageIconState, setImageIcon] = useState(
+    <FcAddImage name="phone" size={10} color="#FFF" />
+  );
+
   function handleChange(event) {
     console.log("input name", event.target.name);
     setGalleryItem({
@@ -23,8 +31,25 @@ function ManageGallery() {
 
   function handleSubmit(event) {
     console.log("submit Form");
-    setInitialGalleryItems([...initialGallerytItems, GalleryItem]);
+    let currentId = initialGallerytItems.length;
+    setInitialGalleryItems([
+      ...initialGallerytItems,
+      {
+        id: currentId,
+        MainImage: GalleryItem.MainImage,
+        OverLayOne: GalleryItem.OverLayOne,
+        OverLayTwo: GalleryItem.OverLayTwo,
+        OverLayThree: GalleryItem.OverLayThree,
+      },
+    ]);
   }
+
+  function deleteItem(el) {
+    setInitialGalleryItems(
+      initialGallerytItems.filter((items) => items.id !== el.id)
+    );
+  }
+
   return (
     <MainLayout>
       <Form>
@@ -32,22 +57,23 @@ function ManageGallery() {
           type="text"
           onChange={handleChange}
           name="MainImage"
-          placeholder="MainImage"
+          placeholder={<FcAddImage />}
           value={GalleryItem.MainImage}
         />
+
         <Input
           type="text"
           onChange={handleChange}
           name="OverLayOne"
           value={GalleryItem.OverLayOne}
-          placeholder="OverLayOne"
+          placeholder={ImageIconState}
         />
         <Input
           onChange={handleChange}
           type="text"
           name="OverLayTwo"
           value={GalleryItem.OverLayTwo}
-          placeholder="OverLayTwo"
+          placeholder={icon}
         />
         <Input
           onChange={handleChange}
@@ -56,24 +82,44 @@ function ManageGallery() {
           value={GalleryItem.OverLayThree}
           placeholder="OverLayThree"
         />
-        <Button onClick={handleSubmit}>
-          Save
-        </Button>
+        <Button onClick={handleSubmit}>Save</Button>
       </Form>
       <Header>
-        <ColumnOne>MainImage</ColumnOne>
-        <ColumnTwo>OverLayOne</ColumnTwo>
-        <ColumnThree>OverLayTwo</ColumnThree>
-        <ColumnFour>OverLayThree</ColumnFour>  
+        <Table>
+          <thead>
+            <Tr>
+              <Th>#</Th>
+              <Th>MainImage</Th>
+              <Th>OverLayOne</Th>
+              <Th>OverLayTwo</Th>
+              <Th>OverLayThrees</Th>
+              <Th>Action</Th>
+            </Tr>
+          </thead>
+          <tbody>
+            {initialGallerytItems.map((el) => (
+              <Tr key={el.id}>
+                <Td>{el.id + 1}</Td>
+                <Td>
+                  <Img src={el.MainImage} alt="MainImage" />
+                </Td>
+                <Td>
+                  <Img src={el.OverLayOne} alt="MainImage" />
+                </Td>
+                <Td>
+                  <Img src={el.OverLayTwo} alt="MainImage" />
+                </Td>
+                <Td>
+                  <Img src={el.OverLayThree} alt="MainImage" />
+                </Td>
+                <Td>
+                  <Delete onClick={() => deleteItem(el)}>Delete</Delete>
+                </Td>
+              </Tr>
+            ))}
+          </tbody>
+        </Table>
       </Header>
-      {initialGallerytItems.map((el) => (
-       <Header>
-       <MainImage>{el.MainImage}</MainImage>
-       <ImageOne>{el.OverLayOne}</ImageOne>
-       <ImageTwo>{el.OverLayTwo}</ImageTwo>
-       <ImageThree>{el.OverLayThree}</ImageThree>
-     </Header>
-      ))}
     </MainLayout>
   );
 }

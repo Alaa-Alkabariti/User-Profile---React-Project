@@ -40,7 +40,8 @@ justify-content: center;
 `;
 
 export const Header = styled.div`
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
 `;
@@ -56,5 +57,25 @@ export const SkillList = styled.div`
 export const ViewSkills = styled.div`
     width: 100%;
     margin: 0 auto;
-    margin-left: 110px;
+`;
+
+
+export const Img = styled.img`
+  width: 10%;
+  height: 10%;
+  box-sizing: border-box;
+`;
+
+export const UpdateSection = styled.div`
+  width: 80%;
+  padding: 30px 0px;
+  margin: 0 auto;
+  height: 200px;
+  background-color: gwhiteay;
+  margin-top: 10px;
+  box-shadow: 2px 2px 2px 2px #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
