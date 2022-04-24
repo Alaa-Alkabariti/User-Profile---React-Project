@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Nav } from "../../../Layout/index.style";
-import { List } from "../../../Layout/InternalNav/index.style";
+import { BiCalendarEdit } from "react-icons/bi";
+import { AiFillDelete } from "react-icons/ai";
+
 import {
-  ColumnFour,
-  ColumnOne,
-  ColumnThree,
-  ColumnTwo,
   Delete,
+  Edit,
   Table,
   Td,
   Th,
@@ -15,68 +13,84 @@ import {
 } from "../ManageAbout/index.style";
 import {
   TitleInput,
-  Cancel,
-  InputComponent,
   EditableNav,
   TitlesSection,
-  TitlesList,
   Header,
-  Input,
   Inputs,
   Form,
   Btn,
+  Message,
 } from "./index.style";
-
-import { Button } from "../ManageAbout/index.style";
-
 
 function EditableInternalNav() {
   const [initialFields, setInitialField] = useState([]);
   const [fieldsValues, setFieldsValues] = useState({
     id: 0,
-    Title1: "",
-    Title2: "",
-    Title3: "",
-    Title4: "",
+    Title: "",
   });
 
-  let FilteredInputs;
-  const [show, setShow] = useState(0);
-  function handleCancel() {}
+  const [message, setMessage] = useState("");
 
   function handleChange(e) {
-    console.log("input", e.target.value);
     setFieldsValues({ ...fieldsValues, [e.target.name]: e.target.value });
-    console.log("inputs", fieldsValues);
   }
 
+  let currentID = initialFields.length + 1;
   function handleClick(e) {
     e.preventDefault();
-    console.log(initialFields);
-    setInitialField([...initialFields, fieldsValues]);
-    console.log(fieldsValues);
-    setFieldsValues({
-      Title1: "",
-      Title2: "",
-      Title3: "",
-      Title4: "",
-    });
-  }
+    const isOnTheList = initialFields.filter(
+      (item) => item.Title === fieldsValues.Title
+    ).length;
+    if (isOnTheList) {
+      setFieldsValues({
+        Title: "",
+      });
 
-  function deleteItem(el) {
-    console.log("el", el.id);
-    const newEducationList = initialFields.filter(
-      (items) => items.id !== el.id
-    );
-    console.log(initialFields);
+      setMessage(
+        fieldsValues.Title + " " + "title, Is already added, Try again"
+      );
+    } else if (fieldsValues.Title === "" || fieldsValues.Title === " ") {
+      setMessage("Please add a non empty value to add to the list");
+    } else {
+      setInitialField([
+        ...initialFields,
+        { id: currentID, Title: fieldsValues.Title },
+      ]);
+      setMessage(
+        "A new title" +
+          " (" +
+          fieldsValues.Title +
+          ") " +
+          "has been added successfully"
+      );
 
-    setFieldsValues({ newEducationList });
+      setFieldsValues({
+        Title: "",
+      });
+    }
   }
 
   function deleteTitle(el) {
-    let currentId = el.id
-    setInitialField(initialFields.filter((items) => items.id !== currentId))
+    let currentId = el.id;
+    setInitialField(initialFields.filter((items) => items.id !== currentId));
   }
+
+
+  const [newItem , setNew] = useState(''); 
+  const editTitle = (el) => {
+    setFieldsValues({Title : el.Title})
+    const newTitle = initialFields.map((element) => {
+      element
+    });
+    /*  
+    setInitialField([...initialFields , {Title: fieldsValues.Title}]) */
+    /* 
+    setFieldsValues({Title : el.Title})
+    const newList = initialFields.map((element) => {
+      element.Title === el.Title ? { ...element, Title: fieldsValues.Title } : element
+    });
+    setInitialField({initialFields : newList}); */
+  };
 
   return (
     <>
@@ -86,67 +100,40 @@ function EditableInternalNav() {
         <EditableNav>
           <Form>
             <Inputs>
-              <InputComponent>
-                <TitleInput
-                  onChange={handleChange}
-                  type="text"
-                  value={fieldsValues.Title1}
-                  placeholder="Enter Title"
-                  name="Title1"
-                />
-                {/*  <Cancel>&#x2613;</Cancel> */}
-              </InputComponent>
-              <InputComponent>
-                <TitleInput
-                  onChange={handleChange}
-                  type="text"
-                  value={fieldsValues.Title2}
-                  placeholder="Enter Title"
-                  name="Title2"
-                />
-                {/*  <Cancel>&#x2613;</Cancel> */}
-              </InputComponent>
-              <InputComponent>
-                <TitleInput
-                  onChange={handleChange}
-                  type="text"
-                  value={fieldsValues.Title3}
-                  placeholder="Enter Title"
-                  name="Title3"
-                />
-                {/* <Cancel>&#x2613;</Cancel> */}
-              </InputComponent>
-              <InputComponent>
-                <TitleInput
-                  onChange={handleChange}
-                  type="text"
-                  value={fieldsValues.Title4}
-                  placeholder="Enter Title"
-                  name="Title4"
-                />
-                {/*  <Cancel>&#x2613;</Cancel> */}
-              </InputComponent>
+              <TitleInput
+                onChange={handleChange}
+                type="text"
+                value={fieldsValues.Title}
+                placeholder="Enter Title"
+                name="Title"
+              />
             </Inputs>
 
             <Btn onClick={handleClick}>Save</Btn>
           </Form>
+          <Message>{message}</Message>
           <Header>
             <Table>
               <thead>
                 <Tr>
-                  <Th>Title One</Th>
-                  <Th>Title Two</Th>
-                  <Th>Title Three</Th>
-                  <Th>Title Four</Th>
+                  <Th>#</Th>
+                  <Th>Title</Th>
+                  <Th>Action</Th>
                 </Tr>
               </thead>
               <tbody>
                 {initialFields.map((el) => (
-                  <Tr>
-                    <Td>{el.Title1} <Delete onClick={() => deleteTitle(el)}>&#x2716;</Delete></Td>
-                    <Td>{el.Title2} <Delete onClick={() => deleteTitle(el)}>&#x2716;</Delete></Td>
-                    <Td>{el.Title3} <Delete onClick={() => deleteTitle(el)}>&#x2716;</Delete></Td>
-                    <Td>{el.Title4} <Delete onClick={() => deleteTitle(el)}>&#x2716;</Delete></Td>
+                  <Tr key={el.id}>
+                    <Td>{el.id}</Td>
+                    <Td>{el.Title}</Td>
+                    <Td>
+                      <Delete onClick={() => deleteTitle(el)}>
+                        <AiFillDelete />
+                      </Delete>
+                      <Edit onClick={() => editTitle(el)}>
+                        <BiCalendarEdit />
+                      </Edit>
+                    </Td>
                   </Tr>
                 ))}
               </tbody>

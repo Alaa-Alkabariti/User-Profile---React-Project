@@ -8,17 +8,15 @@ import { Route, Routes } from "react-router-dom";
 import Registration from "./Screens/Registration";
 import Names from "./Components/Names/en.json";
 import ManageAbout from "./Screens/AdminScreens/ManageAbout";
-import ManageSkills from "./Screens/AdminScreens/ManagaeSkills";
-import ManageServices from "./Screens/AdminScreens/ManageServices";
-import ManageGallery from "./Screens/AdminScreens/GalleryManage";
+
+import AdminMainLayout from "./Screens/AdminScreens/AdminMainLayout";
+import NewAdmin from "./Screens/NewAdmin";
+/* import Toast from "./Components/Toast"; */
 
 function App() {
   return (
     <>
-      {/* <ManageAbout />  */}
-      {/* <ManageSkills />  */}
-      {/* <ManageServices /> */}
-      <ManageGallery />
+    <NewAdmin />
       {/*     <Routes>
         <Route exact path="registration" element={<Registration />} />
         <Route exact path="registration" element={<Registration />} />

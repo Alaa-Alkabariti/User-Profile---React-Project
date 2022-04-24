@@ -10,7 +10,7 @@ import {
 } from "../ManageAbout/index.style";
 import React, { useState } from "react";
 import MainLayout from "../../../Layout";
-import { Form, Input, TextField, ServicesList} from "./index.style";
+import { Form, Input, TextField, ServicesList } from "./index.style";
 
 function ManageServices() {
   const [initialServiceList, setInitialServiceList] = useState([]);
@@ -30,20 +30,29 @@ function ManageServices() {
   function handleSubmit(event) {
     event.preventDefault();
     let currentLength = initialServiceList.length;
-    setInitialServiceList([...initialServiceList, {id: currentLength , ServiceTitle: serviceList.ServiceTitle , ServiceDescription: serviceList.ServiceDescription}]);
+    setInitialServiceList([
+      ...initialServiceList,
+      {
+        id: currentLength,
+        ServiceTitle: serviceList.ServiceTitle,
+        ServiceDescription: serviceList.ServiceDescription,
+      },
+    ]);
     setServiceList({ ServiceTitle: "", ServiceDescription: "" });
   }
 
   function removeService(el) {
-      console.log('el' , el.id + 1)
-      console.log('initialServiceList' , initialServiceList)
-      const currentID = el.id
-     setInitialServiceList(initialServiceList.filter((items) => items.id !== currentID)) 
+    console.log("el", el.id + 1);
+    console.log("initialServiceList", initialServiceList);
+    const currentID = el.id;
+    setInitialServiceList(
+      initialServiceList.filter((items) => items.id !== currentID)
+    );
   }
 
   return (
-    <MainLayout>
-      <Form>
+   <>
+   <Form>
         <Input
           onChange={handleChange}
           type="text"
@@ -57,34 +66,38 @@ function ManageServices() {
           placeholder="Service Description "
           name="ServiceDescription"
           value={serviceList.ServiceDescription}
+          min="20"
         />
         <Button onClick={handleSubmit}>Save</Button>
       </Form>
-     <ServicesList>
-     <Table>
-        <thead>
-          <Tr>
-            <Th>#</Th>
-            <Th>ServiceTitle</Th>
-            <Th>ServiceDescription</Th>
-            <Th>Action</Th>
-          </Tr>
-        </thead>
-        <tbody>
-          {initialServiceList.map((el) => (
-            <Tr key={el.id}>
-              <Td>{el.id+1}</Td>
-              <Td>{el.ServiceTitle}</Td>
-              <Td>{el.ServiceDescription}</Td>
-              <Td>
-                <Delete onClick={() => removeService(el)}>Delete</Delete>
-              </Td>
+      <ServicesList>
+        <Table>
+          <thead>
+            <Tr>
+              <Th>#</Th>
+              <Th>ServiceTitle</Th>
+              <Th>ServiceDescription</Th>
+              <Th>Action</Th>
             </Tr>
-          ))}
-        </tbody>
-      </Table>
-     </ServicesList>
-    </MainLayout>
+          </thead>
+          <tbody>
+            {initialServiceList.map((el) => (
+              <Tr key={el.id}>
+                <Td>{el.id + 1}</Td>
+                <Td>{el.ServiceTitle}</Td>
+                <Td>{el.ServiceDescription}</Td>
+                <Td>
+                  <Delete onClick={() => removeService(el)}>Delete</Delete>
+                </Td>
+              </Tr>
+            ))}
+          </tbody>
+        </Table>
+      </ServicesList>
+   
+   </>
+      
+   
   );
 }
 

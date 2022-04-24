@@ -37,9 +37,10 @@ export const Header = styled.div`
 `;
 
 export const InputComponent = styled.div`
-  width: 23%;
+  width: 70%;
   height: 40px;
   display: flex;
+  margin: 0 auto;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -69,6 +70,7 @@ export const Input = styled.input`
 
 export const Form = styled.div`
   display: flex;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -79,7 +81,6 @@ export const TitleInput = styled.input`
   padding-left: 10px;
   border: 0.5px solid #eeeeee;
   width: 100%;
-  margin-left: 3px;
   height: 36px;
   border-radius: 10px;
   background-color: #efefef;
@@ -130,4 +131,12 @@ export const Btn = styled.button`
   &:hover {
     opacity: 0.8;
   }
+`;
+
+export const Message = styled.p`
+  color: ${(props) => props.color};
+  width: 80%;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #eeeeee;
 `;
