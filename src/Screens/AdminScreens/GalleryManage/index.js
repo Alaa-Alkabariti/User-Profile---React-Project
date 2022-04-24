@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MainLayout from "../../../Layout";
-import { Img } from "../ManagaeSkills/index.style";
+import { Img, UploadImage } from "../ManagaeSkills/index.style";
 import { Button, Delete, Table, Td, Th, Tr } from "../ManageAbout/index.style";
 import { Form, Input, Header } from "./index.style";
 import { FcAddImage } from "react-icons/fc";
@@ -21,12 +21,19 @@ function ManageGallery() {
     <FcAddImage name="phone" size={10} color="#FFF" />
   );
 
-  function handleChange(event) {
+  /*   function handleChange(event) {
     console.log("input name", event.target.name);
     setGalleryItem({
       ...GalleryItem,
       [event.target.name]: event.target.value.trim(),
     });
+  } */
+  const [selectedImage, setSelectedImage] = useState();
+
+  function handleChange(event) {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedImage(event.target.files);
+    }
   }
 
   function handleSubmit(event) {
@@ -51,37 +58,42 @@ function ManageGallery() {
   }
 
   return (
-    <MainLayout>
+   /*  <MainLayout> */
+   <>
       <Form>
-        <Input
-          type="text"
+        <UploadImage
           onChange={handleChange}
-          name="MainImage"
-          placeholder={<FcAddImage />}
           value={GalleryItem.MainImage}
+          placeholder="Image here"
+          name="Image"
+          type="file"
+          accept="image/*"
+        />
+        <UploadImage
+          onChange={handleChange}
+          value={GalleryItem.MainImage}
+          placeholder="Image here"
+          name="Image"
+          type="file"
+          accept="image/*"
+        />
+        <UploadImage
+          onChange={handleChange}
+          value={GalleryItem.OverLayTwo}
+          placeholder="Image here"
+          name="Image"
+          type="file"
+          accept="image/*"
+        />
+        <UploadImage
+          onChange={handleChange}
+          value={GalleryItem.OverLayThree}
+          placeholder="Third Image"
+          name="Image"
+          type="file"
+          accept="image/*"
         />
 
-        <Input
-          type="text"
-          onChange={handleChange}
-          name="OverLayOne"
-          value={GalleryItem.OverLayOne}
-          placeholder={ImageIconState}
-        />
-        <Input
-          onChange={handleChange}
-          type="text"
-          name="OverLayTwo"
-          value={GalleryItem.OverLayTwo}
-          placeholder={icon}
-        />
-        <Input
-          onChange={handleChange}
-          name="OverLayThree"
-          type="text"
-          value={GalleryItem.OverLayThree}
-          placeholder="OverLayThree"
-        />
         <Button onClick={handleSubmit}>Save</Button>
       </Form>
       <Header>
@@ -120,7 +132,8 @@ function ManageGallery() {
           </tbody>
         </Table>
       </Header>
-    </MainLayout>
+</>
+   /*  </MainLayout> */
   );
 }
 
